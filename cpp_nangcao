@@ -26,6 +26,83 @@ cv=2*pi*r; | dt=pi*r*r;
 chu vi diện tích hình chữ nhật :
 cv=2*(chiều dài+chiều rộng); | dt= chiều dài x chiều rộng;
 --------------------------------------------------------------------------
+hàm setw và setfill nằm trong thư viện iomanip 
++ setw dùng để đặt tối thiểu chữ số => setw(6)
++ setfill dùng đặt kí tự nếu thiếu chữ số => setfill('#')
+nó sẽ đặt trước số nếu n=345 vì có 3 chữ số nên dùng setw
+=> ###850 , 000850 trở thành 6 số vì setw yêu cầu 6 số 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------
 Hoán đổi dùng hàm swap(a,b) hoặc gán biến
 int tmp=b;
 b=a,a=tmp;
