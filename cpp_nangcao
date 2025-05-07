@@ -10,5 +10,5 @@ NOTE: tính từng dòng code từ trên xuống
   int d=a++ + b++;//a++ =101 + b++=201 => d=302 ,a++=102 ,b++=202
   cout<<a<<" "<<b<<" "<<c<<" "<<d; //a=102 , b=202 , c=301 , d =302 
 --------------------------------------------------------------------
-n % 10 % 2 == 0	Kiểm tra chữ số tận cùng là chẵn
+n % 10 % 2 == 0	Kiểm tra chữ số tận cùng là chẵn / chữ số tận cùng là bội số 2 
 n % 10 == 2	Kiểm tra chữ số tận cùng là 2
