@@ -17,3 +17,15 @@ if(dtb>=8) cout<<"gioi";
 else if(dtb>=6.5) cout<<"kha";
 NOTE: đúng hay sai => đúng nhé vì nếu trong if else thì nó in 1 lần 
 điều kiện dtb>=8 đúng thì nó in gioi còn nếu sai thì nó vẫn in khá.
+--------------------------------------------------------------------------
+đối với hàm max,min trên 3 chữ số thì dùng thư viện algorithm và có dấu {}
+--------------------------------------------------------------------------
+khai báo hằng số : const double pi=3.14;
+chu vi diện tích hình tròn :
+cv=2*pi*r; | dt=pi*r*r;
+chu vi diện tích hình chữ nhật :
+cv=2*(chiều dài+chiều rộng); | dt= chiều dài x chiều rộng;
+--------------------------------------------------------------------------
+Hoán đổi dùng hàm swap(a,b) hoặc gán biến
+int tmp=b;
+b=a,a=tmp;
