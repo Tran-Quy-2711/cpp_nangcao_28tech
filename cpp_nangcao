@@ -27,82 +27,77 @@ chu vi diện tích hình chữ nhật :
 cv=2*(chiều dài+chiều rộng); | dt= chiều dài x chiều rộng;
 --------------------------------------------------------------------------
 hàm setw và setfill nằm trong thư viện iomanip 
+cout<<setw(6)<<setfill('0')<<n;
 + setw dùng để đặt tối thiểu chữ số => setw(6)
 + setfill dùng đặt kí tự nếu thiếu chữ số => setfill('#')
 nó sẽ đặt trước số nếu n=345 vì có 3 chữ số nên dùng setw
 => ###850 , 000850 trở thành 6 số vì setw yêu cầu 6 số 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------
+ số thứ 1 là số lớn nhất <=a mà chia hết cho b
+ví dụ số 7 thì giảm xuống thành 6 chia hết cho b =>a/b*b 
+ số thứ 2 là số nhỏ nhất >=a mà chia hết cho b
+ví dụ 6/2 = 3 thì lấy 3*3 = 9 vì nó lớn hơn a 
+=> (a+b-1)/b*b hoặc a/b*b+b 
+--------------------------------------------------------------------------
+Tam giác hợp lệ thì phải có 6 điều kiện : 
+3 cạnh đều dương, và tổng hai cạnh luôn lớn hơn cạnh còn lại
 --------------------------------------------------------------------------
 Hoán đổi dùng hàm swap(a,b) hoặc gán biến
 int tmp=b;
 b=a,a=tmp;
+--------------------------------------------------------------------------
+Mua nước : khi vào hàng hóa muốn tiết kiệm thì tính a,b
+nếu chai a mà ít tiền hơn b thì mua luôn
+còn chai b mà ít tiền hơn thì chia ra 2 trường hợp
+nếu số lít chẳn thì n/2*b còn lẻ n/2*b+a  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
