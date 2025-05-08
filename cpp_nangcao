@@ -71,10 +71,16 @@ tại sao '-' vì nó nhảy sang dương có thể nhảy lùi về 0 hoặc sa
 ĐỒNG XU : ví dụ ta có 15 ngàn mà muốn đổi ra tờ 5 xu thì ta s/n = 3 tờ 
 được phép có nhiều đồng tiền thì ta có thể cộng 1 
 nếu s%n chẳn thì s/n; lẻ s/n+1 
-
-
-
-
+--------------------------------------------------------------------------
+LEO CẦU THANG : có thể 1 bước , 2 bước , 3 bước ...
+MAX thì 1 bước thì nhiều bước nhất , MIN thì lại ít bước 
+n=10,m=2 thì m nó có thể đi 1 bước hoặc 2 bước để đạt đủ 10 bước  
+số lần di chuyển là bội số của một số nguyên m thì tìm bước tối thiểu 
+sau đó chia m chẳn thì 
+đặt a=min // là số lần bước tối thiểu khi tính xong 
+b=m // bội số m để chia 
+nếu a%b==0 cout<<a; vì nó đi 1 bước 
+else cout<<a/b*m+m vì nó đi 2,3... bước 
 
 
 
