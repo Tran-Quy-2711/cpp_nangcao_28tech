@@ -59,9 +59,14 @@ ví dụ dọc 60cm ngang 70cm gạch 30cm thì lấy dọc/gạch=30cm lót đ�
 nếu dọc%gạch==0 d=n/a; else d=n/a+1; vì có thể lót dư 
 nếu ngang%gạch==0 ng=m/a; else ng=m/a+1;
 cout<<dọc*ngang để phủ hết quảng trường 
-
-
-
+--------------------------------------------------------------------------
+VỊ TRÍ ẾCH NHẢY : xét K bước nhảy của nó 
+ví dụ 5 bước thì bước 1 nó nhảy phải thì có 3 phải 2 trái 
+nếu k chẳn thì phải=k/2; trái=k/2; vì tính cả hai
+nếu k lẻ thì phải=k/2+1; trái=k/2 vì 5 bước thì bước đầu là bên phải 
+cout<<tổng bước phải * a - tổng bước trái * b
+tính số lần nó bước hết trái và phải 
+tại sao '-' vì nó nhảy sang dương có thể nhảy lùi về 0 hoặc sang âm 
 
 
 
