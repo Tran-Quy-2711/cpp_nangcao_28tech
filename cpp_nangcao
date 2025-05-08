@@ -67,7 +67,10 @@ nếu k lẻ thì phải=k/2+1; trái=k/2 vì 5 bước thì bước đầu là 
 cout<<tổng bước phải * a - tổng bước trái * b
 tính số lần nó bước hết trái và phải 
 tại sao '-' vì nó nhảy sang dương có thể nhảy lùi về 0 hoặc sang âm 
-
+--------------------------------------------------------------------------
+ĐỒNG XU : ví dụ ta có 15 ngàn mà muốn đổi ra tờ 5 xu thì ta s/n = 3 tờ 
+được phép có nhiều đồng tiền thì ta có thể cộng 1 
+nếu s%n chẳn thì s/n; lẻ s/n+1 
 
 
 
