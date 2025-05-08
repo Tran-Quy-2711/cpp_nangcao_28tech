@@ -50,11 +50,15 @@ Mua nước : khi vào hàng hóa muốn tiết kiệm thì tính a,b
 nếu chai a mà ít tiền hơn b thì mua luôn
 còn chai b mà ít tiền hơn thì chia ra 2 trường hợp
 nếu số lít chẳn thì n/2*b còn lẻ n/2*b+a  
-
-
-
-
-
+--------------------------------------------------------------------------
+DOMINO : nó không được phép đặt ra ngoài thì nó là kiểu int (m*n)/2
+--------------------------------------------------------------------------
+Lát Gạch : n dọc m ngang a là điều kiện phủ gạch chiều dọc và ngang 
+không được phép phá vỡ các viên đá thì phải làm tròn lên để phủ dư 
+ví dụ dọc 60cm ngang 70cm gạch 30cm thì lấy dọc/gạch=30cm lót được 2 viên 
+nếu dọc%gạch==0 d=n/a; else d=n/a+1; vì có thể lót dư 
+nếu ngang%gạch==0 ng=m/a; else ng=m/a+1;
+cout<<dọc*ngang để phủ hết quảng trường 
 
 
 
