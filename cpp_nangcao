@@ -119,6 +119,14 @@ i=12 vào if i=13 trở về i++ = 14 <=15
 i=14 vào if i=15 trở về i++ = 16 >=15 nên sai 
 i =  1 4 6 8 10 12 14 
 NOTE : tăng trong if else xong thì sẽ tăng 1 đơn vị trong for 
+int i = n + 1;  // i = 45 nếu n = 44 // khi >n ,< n thì i=n+1 , n-1 
+while (true) { 
+    if (i % 17 == 0) {  //i=45 thì sai nên nó không chạy if mà xuống i++
+        cout << i << endl;
+        break;
+    }
+    i++; //tăng đơn vị đến khi nào nó chạy được trong if 
+}
 -------------------------------------------------------------------------
 Tìm số nhỏ nhất >=a chia hết cho b
 a=23 , b=7 
@@ -128,9 +136,21 @@ for(int i=a; ;i++){  // đến khi nó chia hết cho b thì nó dừng
     break;      // phải có điều kiện dừng break 
   }
 }
-
-
-
+--------------------------------------------------------------------------
+IN KÍ TỰ KẾ TIẾP  ví dụ : a b c d e 
+ll n; cin>>n;
+  for(char i=97;i<97+n;i++) {
+    cout<<i<<" ";
+  }
+97+5=102 -> a b c d e f vì i<97+n nên đến e là dừng   
+ll n; cin>>n;
+  char c='a';
+  int dem=0;
+  while(dem<n){ // 0<5 
+    cout<<c<<" "; // a 
+    c++; // b 
+    dem++; //2<5 quay về thành b , c , d , e 
+  }
 
 
 
