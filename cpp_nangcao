@@ -93,7 +93,9 @@ a/b*b+b có thể dùng nhưng không thể trực tiếp làm tròn
 +  do {
       // Code trong vòng lặp
   } while ( [Điều kiện lặp] );
-NOTE : biết trước vòng lặp thì dùng for  
+NOTE : + biết trước vòng lặp thì dùng for  
++ while không áp dụng số 0 khi đếm nên dùng if else để đặt n==0 cout<<1;
+nên return vì không return nó sẽ chạy từng dòng xuống dưới 
 n%10 dùng để lấy số
 n/10 dùng để xóa số 
 --------------------------------------------------------------------------
