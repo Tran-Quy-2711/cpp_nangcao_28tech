@@ -84,11 +84,16 @@ nếu a%b==0 cout<<a; vì nó đi 1 bước
 else cout<<(a/b+1)*b vì nó đi 2,3... bước  // để tính bội số tiếp theo 
 a/b*b+b có thể dùng nhưng không thể trực tiếp làm tròn 
 --------------------------------------------------------------------------
-for ( [Câu lệnh khởi tạo] ; [Điều kiện lặp] ; [Câu lệnh cập nhật] )
-while ( [Điều kiện lặp] )
-do {
++ for ( [Câu lệnh khởi tạo] ; [Điều kiện lặp] ; [Câu lệnh cập nhật] ){
     // Code trong vòng lặp
-} while ( [Điều kiện lặp] );
+  }
++ while ( [Điều kiện lặp] ){
+    // Code trong vòng lặp
+  {
++  do {
+      // Code trong vòng lặp
+  } while ( [Điều kiện lặp] );
+NOTE : biết trước vòng lặp thì dùng for  
 --------------------------------------------------------------------------
 for(int i=1;i<15;i*=2) {
     cout<<i<<" ";    // 1 2 4 8 -> 8*2=16 nó vượt 15 nên dừng 
