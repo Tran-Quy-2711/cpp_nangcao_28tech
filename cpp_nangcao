@@ -88,12 +88,22 @@ for(int i=1;i<15;i*=2) {
     cout<<i<<" ";    // 1 2 4 8 -> 8*2=16 nó vượt 15 nên dừng 
   }
   cout<<i;   // báo lỗi vì chưa khai báo 
-
-
-
-
-
-
+-------------------------------------------------------------------------
+for(int i=1;i<=15;i++){
+    cout<<i<<" "; 
+    if(i%2==0) i++;
+    else i+=2;   
+}
+i=1 cout<<i ra 1 xuống dòng 1%2==1 
+i=1 vào else i=3 trở về i++ = 4 <=15 
+i=4 vào if i=5 trở về i++ = 6 <=15 
+i=6 vào if i=7 trở về i++ = 8 <=15
+i=8 vào if i=9 trở về i++ = 10 <=15
+i=10 vào if i=11 trở về i++ = 12 <=15
+i=12 vào if i=13 trở về i++ = 14 <=15
+i=14 vào if i=15 trở về i++ = 16 >=15 nên sai 
+i =  1 4 6 8 10 12 14 
+NOTE : tăng trong if else xong thì sẽ tăng 1 đơn vị trong for 
 
 
 
