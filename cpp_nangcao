@@ -83,7 +83,11 @@ b=m // bội số m để chia
 nếu a%b==0 cout<<a; vì nó đi 1 bước 
 else cout<<(a/b+1)*b vì nó đi 2,3... bước  // để tính bội số tiếp theo 
 a/b*b+b có thể dùng nhưng không thể trực tiếp làm tròn 
-
+-------------------------------------------------------------------------
+for(int i=1;i<15;i*=2) {
+    cout<<i<<" ";    // 1 2 4 8 -> 8*2=16 nó vượt 15 nên dừng 
+  }
+  cout<<i;   // báo lỗi vì chưa khai báo 
 
 
 
