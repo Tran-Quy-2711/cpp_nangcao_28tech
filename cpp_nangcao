@@ -238,6 +238,14 @@ bài này mặc định cột i==1 thì mặc định còn j==i thì tính j th�
 Ước chung lớn nhất : vd 2!,5! ucln của nó là 2 và 3!,5! ucll là 3 
 Khi khai báo biến tổng ta còn phải nhìn công thức nó là 0 hay 1 
 vd 1/0! thì = 1 nếu khai báo sum=0 thì nó phần tử đầu tiên 
-
-
-
+-----------------------------------------------------------------------
+AX+BY=N công thức nguyên không âm : Y=N-AX/B 
+Digital root muốn còn 1 số thì 2 vòng while , n>9 và n!=0 cập nhật n
+while(n>9){
+    int sum=0;       // dùng để cập nhật n 
+    while(n!=0){    // để còn 1 chữ số 
+      sum+=n%10;
+      n/=10;
+    }
+    n=sum;
+}
