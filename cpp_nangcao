@@ -204,13 +204,36 @@ Lập trình chạy từng bước một theo thứ tự vòng lặp khi i=1
 j=1; 1<=5 in ra 1 dem++ lên là 2 khi nào chạy xong for j rồi dừng đến i=2 
 sau đó lặp đến khi >=5 là dừng chứ không phải là j=1 ; j<=5 
 mà in ra 1 2 3 4 5 
-
-
-
-
-
-
-
+________________________________________________________________________
+for(int i=1;i<=n;i++){
+    int dem=i;
+    for(int j=1;j<=n;j++){
+      cout<<dem<<" ";
+      dem++;
+    } // chạy hết for j thoát ra i++ tăng lên i=2 rồi dem=2 
+    cout<<endl;
+}
+khi i=1 , dem cập nhật là dem=1 chạy xuống for j 
+cout<<1; rồi cập nhật lên 2 , 3 , 4 , 5 hết for j biến i++ tăng lên i=2 
+khi i=2 , dem cập nhật là dem=2 chạy xuống for j
+cout<<2; rồi cập nhật lên 3 , 4 , 5 , 6 hết for j biến i++ tăng lên i=3
+_______________________________________________________________________
+nên nhớ khi đặt ở for i khi nó chỉ chạy hàng i không chạy j 
+muốn có kết quả thì tính j 
+for(int i=1;i<=n;i++){
+    int dem=i; // khi i=1 cout<<1 
+    for(int j=1;j<=i;j++){
+      cout<<dem<<" "; // khi i=1 thì 1<=1 hàng j chỉ in 1 số 
+      dem+=n-j; // 1+=5-1 = 5 
+    }
+    cout<<endl;
+}
+khi i=2 thì j<=2 in 2 số cout<<2 vì đặt dem=i 
++ j=1 2+=5-1 = 6 nên nhớ lập trình chạy từng bước một 
+khi i=3 thì j<=3 in 3 số cout<<3 dem=i;
++ j=1 dem+=n-j thì 3+=5-1 = 7
++ j=2 dem+=n-j thì 3+=5-2 = 10 
+bài này mặc định cột i==1 thì mặc định còn j==i thì tính j thôi 
 
 
 
