@@ -157,7 +157,9 @@ n*n -> 1369 - 1 còn 2*n -> 74 - 1
 nên khai báo long long cho biến gán vì có thể bị tràn và ép kiểu 1ll
 --------------------------------------------------------------------------
 các bài toán tìm ước , số chính phương  : duyệt từ 1 đến căn n : i*i<=n 
-for(int i=1;i*i<=n;i++) cout<<i*i<<" "; 
+n chia hết cho nó, thì số đó là ước. // bài tìm ước 
+phải đủ 2 cách làm mới tìm đủ ước của nó n%i==0 và i!=n/i 
+for(int i=1;i*i<=n;i++) cout<<i*i<<" "; // bài chính phương 
 
 
 
