@@ -168,7 +168,8 @@ bia=n/28 , vo=bia // để đổi bia
 if(vo>=3){
   biamoi=vo/3;
   bia+=biamoi;
-  vo=vo%3+biamoi; // lấy số vỏ bia còn lại + bia được đổi 
+  vo=vo%3+biamoi; //4 % 3 + 1 = 2 không phải là 1+1=2 
+// lấy số vỏ bia còn lại + bia được đổi 
 }
 
 
