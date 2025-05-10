@@ -160,8 +160,16 @@ các bài toán tìm ước , số chính phương  : duyệt từ 1 đến căn
 n chia hết cho nó, thì số đó là ước. // bài tìm ước 
 phải đủ 2 cách làm mới tìm đủ ước của nó n%i==0 và i!=n/i 
 for(int i=1;i*i<=n;i++) cout<<i*i<<" "; // bài chính phương 
-
-
+--------------------------------------------------------------------------
+Số nguyên tố là số chia hết cho 1 và chính nó bắt đầu là số 2 
+--------------------------------------------------------------------------
+MUA BIA ví dụ n=138 mà bia giá 28 đồng cứ 3 vỏ là được đổi 1 chai bia 
+bia=n/28 , vo=bia // để đổi bia 
+if(vo>=3){
+  biamoi=vo/3;
+  bia+=biamoi;
+  vo=vo%3+biamoi; // lấy số vỏ bia còn lại + bia được đổi 
+}
 
 
 
