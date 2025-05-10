@@ -177,7 +177,19 @@ for(int i=1;i<=n;i++){
     for(int j=1;j<=n;j++) cout<<"*";
     cout<<endl;  // phải xuống dòng vì for gốc là i vì nó chạy gốc 
 } 
-
+__________________________________________________________________________
+for(int i=n;i>=1;i--){
+    for(int j=1;j<=n;j++){
+      if(j<=n-i) cout<<" ";
+      else cout<<"*";
+    }
+    cout<<endl;
+}
+nó chạy từ 1<=n // 1<=0 rồi xuống chạy code so sánh 
+1<=0 vào trường hợp else in *
+1<=n // 1<=1 
+1<=1 vào if in " " 2>=1 in * 
+1<=2 vào if in " " 2<=2 in " " 3<=2 vào else 4<=2 vào else 5<=2 vào else 
 
 
 
