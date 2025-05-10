@@ -249,3 +249,74 @@ while(n>9){
     }
     n=sum;
 }
+-----------------------------------------------------------------------
+A
+B B
+C C C
+D D D D
+E E E E E
+F F F F F F 
+// khởi tạo biến char c=64+i trong for i 
+----------------------------------------------------------------------
+TAM GIÁC CÂN :
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    for(int j=1;j<=2*i-1;j++) cout<<"* ";
+    cout<<endl;
+}
+2 vòng for j đều đứng trên 1 hàng (dòng)
+vd: i=1 in 4 dấu cách còn j=5 sẽ là vòng lặp thứ hai làm 
+----------------------------------------------------------------------
+        1 
+      2 3 2 
+    3 4 5 4 3 
+  4 5 6 7 6 5 4 
+5 6 7 8 9 8 7 6 5
+bài này có 3 vòng j 1 cái n-i cho dấu cách , và cái tăng/giảm
+for(int j=1;j<=i;j++){
+      cout<<dem<<" ";
+      dem++;
+}
+giảm thì dem-=2;
+for(int j=1;j<i;j++){
+      cout<<dem<<" ";
+      dem--;
+}
+nên j<i thì cái bên phải nó chỉ thực hiện 4 lần cho nó căn bằng 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
