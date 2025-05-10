@@ -234,8 +234,10 @@ khi i=3 thì j<=3 in 3 số cout<<3 dem=i;
 + j=1 dem+=n-j thì 3+=5-1 = 7
 + j=2 dem+=n-j thì 3+=5-2 = 10 
 bài này mặc định cột i==1 thì mặc định còn j==i thì tính j thôi 
-
-
+-----------------------------------------------------------------------
+Ước chung lớn nhất : vd 2!,5! ucln của nó là 2 và 3!,5! ucll là 3 
+Khi khai báo biến tổng ta còn phải nhìn công thức nó là 0 hay 1 
+vd 1/0! thì = 1 nếu khai báo sum=0 thì nó phần tử đầu tiên 
 
 
 
