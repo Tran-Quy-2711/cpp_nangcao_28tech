@@ -154,7 +154,7 @@ ll n; cin>>n;
 --------------------------------------------------------------------------
 n*n-1 và 2*n-1 khác nhau hoàn toàn  vd : n=37 
 n*n -> 1369 - 1 còn 2*n -> 74 - 1 
-
+nên khai báo long long cho biến gán vì có thể bị tràn và ép kiểu 1ll
 
 
 
