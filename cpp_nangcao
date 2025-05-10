@@ -171,7 +171,12 @@ if(vo>=3){
   vo=vo%3+biamoi; //4 % 3 + 1 = 2 không phải là 1+1=2 
 // lấy số vỏ bia còn lại + bia được đổi 
 }
-
+(n-3)/2+1 đối với số lẻ ví dụ 7 = 3 vì biểu diễn số nguyên là từ 2,3....
+--------------------------------------------------------------------------
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++) cout<<"*";
+    cout<<endl;  // phải xuống dòng vì for gốc là i vì nó chạy gốc 
+} 
 
 
 
