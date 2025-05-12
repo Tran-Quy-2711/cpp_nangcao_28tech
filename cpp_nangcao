@@ -84,6 +84,43 @@ nếu a%b==0 cout<<a; vì nó đi 1 bước
 else cout<<(a/b+1)*b vì nó đi 2,3... bước  // để tính bội số tiếp theo 
 a/b*b+b có thể dùng nhưng không thể trực tiếp làm tròn 
 --------------------------------------------------------------------------
+TỔNG ĐỘ CHÊCH LỆCH vd : 1236 -> 1+1+1+3=6 
+thì ta lấy cái cuối cùng rồi xóa rồi lấy biến sum+=(r-n%10);
+SO SÁNH CÁC SỐ LỚN NHẤT
+thì đặt 1 số cuối rồi so sánh từng số nếu số đó > thì cập nhật
+if(n%10>max) max=n%10; n/=10;
+__________________________________________________________________________
+while(n>9){
+    int sum=0;    //phải đặt sum bên ngoài while phụ vì nó so sánh 
+    while(n!=0){
+      sum=n%10; //phải đặt sum kiểm tra từng số 
+      n/=10;
+    }
+    n=sum;  
+  }
+--------------------------------------------------------------------------
+switch (val) {
+  case 1:
+    // code
+    break;
+  case 2:
+    //code
+    break;
+  .....
+  case n:
+    // code
+    break;
+  default :
+    // code
+}
+các case chỉ : không có mở/đóng {} 
+muốn case 1->10 thì ta dùng ... ở giữa các case 
+switch (val) {
+  case 1 ... 10:
+      // code
+      break;
+}
+--------------------------------------------------------------------------
 + for ( [Câu lệnh khởi tạo] ; [Điều kiện lặp] ; [Câu lệnh cập nhật] ){
     // Code trong vòng lặp
   }
@@ -306,16 +343,18 @@ là : 5-1+1=5 thì phải j đứng cột 5 mới = 5 thì in ra i
 10101
 01010
 if(i+j)%2==1 cout<<1; else cout<<0; hoặc if(i%2!=j%2) cout<<1
-
-
-
-
-
-
-
-
-
-
+---------------------------------------------------------------------
+TRONG C++ CÓ 3 TỪ KHÓA : TYPEDEF , DEFINE , USING
+Typedef là một từ khóa được sử dụng để tạo một tên mới
++ typedef kết thúc bằng dấu ;
+      typedef long long ll;
+gồm 3 phần "từ khóa"   "kiểu dữ liệu"     "đặt tên" 
+define có 3 chức năng : đặt tên mới , định nghĩa giá trị , cú pháp 
++ define bắt đầu bằng dấu # 
+#define ll long long    // đặt tên mới 
+#define PI 3.14   //định nghĩa giá trị 
+#define max 10^9  // định nghĩa giá trị 
+NOTE: ĐỊNH NGHĨA ĐƯỢC CẢ SỐ VÀ CHUỖI 
 
 
 
