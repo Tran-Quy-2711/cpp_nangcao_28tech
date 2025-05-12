@@ -355,10 +355,16 @@ define có 3 chức năng : đặt tên mới , định nghĩa giá trị , cú 
 #define PI 3.14   //định nghĩa giá trị 
 #define max 10^9  // định nghĩa giá trị 
 NOTE: ĐỊNH NGHĨA ĐƯỢC CẢ SỐ VÀ CHUỖI 
-
-
-
-
++ using phải có dấu = ở giữa đặt tên và kiểu dữ liệu
+using ll = long long;
+---------------------------------------------------------------------
+HÀM VOID KHI TRONG HAM MAIN LÀ : HAM();
+khi ngoài hàm main mà muốn in kết quả thì phải có cout 
+void ham(int a, int b, int c){   // trong () gọi là tham số 
+}
+int main(){
+  ham(10,20,30); // hàm mà truyền vào gọi là đối số 
+}
 
 
 
