@@ -426,15 +426,61 @@ int main() {
     tang(a);
     cout<<a; // In ra 6, vì 'a' đã bị thay đổi
 }
-
-
-
-
-
-
-
-
-
+----------------------------------------------------------------------
+TRONG C++ CÓ 3 BIẾN PHẠM VỊ 
++ BIẾN TOÀN CỤC (GLOBAL) : khai báo ngoài hàm main 
++ BIẾN ĐỊA PHƯƠNG (LOCAL) : khai báo trong hàm main 
++ BIẾN NGOẶC NHỌN (ENCLOSING SCOPE) : trong main mà thêm ngoặc nhọn 
+NOTE: ưu tiên ngoặc nhọn , rồi đến địa phương , cuối là toàn cục 
+là nó tìm kiếm từ ngoặc nhọn đến địa phương rồi toàn cục 
+int a=100;
+  int b=200;
+  if(true){
+    int a=200;
+    b=100;
+  }
+  cout<<a<<" "<<b;  // 100 100 
+khi khai báo biến trước nó là gọi là biến gốc 
+còn gán biến thì sẽ thay đổi giá trị ảnh hưởng biến gốc 
+----------------------------------------------------------------------
+CÔNG THỨC LẬT NGƯỢC : 
+int rev = 0;
+while (n > 0) {
+  int digit = n % 10;
+  rev = rev * 10 + digit;
+  n = n / 10;
+}
+return rev;
+CÁC BÀI TOÁN LIÊN QUAN ĐẾN ƯỚC NGUYÊN TỐ DÙNG THỪA SỐ NGUYÊN TỐ 
+int soluong(int n){
+  int dem=0;
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      dem++;
+      while(n%i==0) n/=i;
+    }
+  }
+  if(n>1) dem++;
+  return dem;
+}
+_______________________________________________________________________
+int ktra6(int n){
+  int sum=0;
+  while(n){
+    sum=n%10;
+    n/=10;
+  }
+  return sum%10==6;
+}
+lấy chữ số cuối cùng so sánh = 6 thôi 
+vd n=36 -> lặp 1 sum = 6 lặp 2 sum=3 thoát khỏi thì sum = 3 thôi 
+int ktra6(int n){
+  while(n){
+    if(n%10==6) return 1;  // kiểm tra từng số 
+    n/=10;
+  }
+  return 0;
+}
 
 
 
