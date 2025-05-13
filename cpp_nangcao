@@ -390,8 +390,11 @@ vd return sum=4 thì nó nằm trong int còn lớn hơn 10^9 thì ll
 nhập số n nếu lớn 10^9 thì để tham số là long long 
 muốn kiểu giá trị ra nhiêu thì đặt kiểu dữ liệu giống nó 
 ví dụ in ra trên 10^9 thì kiểu trả về phải là long long 
-
-
+long long sum(ll n){
+  int kq=n*n;  // phải khai báo long long cho gán biến
+  return kq;   // kết quả sẽ bị tràn vì biến kq là int 
+}
+note : kiểu trả về của hàm phải giống với kiểu gán biến 
 
 
 
