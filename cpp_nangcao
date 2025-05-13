@@ -365,14 +365,31 @@ void ham(int a, int b, int c){   // trong () gọi là tham số
 int main(){
   ham(10,20,30); // hàm mà truyền vào gọi là đối số 
 }
-
-
-
-
-
-
-
-
+HÀM INT,LONG LONG,DOUBLE,FLOAT TRONG MAIN PHẢI CÓ COUT ĐỂ XUẤT RA 
+int main(){
+  cout<<ham();  // gọi hàm khi muốn in 
+}
+NGOÀI MAIN KHI IN PHẢI LÀ RETURN;
+int ham(){
+  cout<<"28tech";
+  return 28;     // 
+}
+ham(); thì nó in mỗi 28tech , cout<<ham() in ra 28tech và 28 
+1 hàm chỉ có một câu lệnh return gặp return là dừng 
+_____________________________________________________________________
+int sum(ll n){
+  int sum=0;
+  while(n!=0){
+    sum+=n%10;
+    n/=10;
+  }
+  return sum;  //4 
+}
+giá trị trở về nó là bao nhiêu thì thay kiểu trả về theo nó 
+vd return sum=4 thì nó nằm trong int còn lớn hơn 10^9 thì ll 
+nhập số n nếu lớn 10^9 thì để tham số là long long 
+muốn kiểu giá trị ra nhiêu thì đặt kiểu dữ liệu giống nó 
+ví dụ in ra trên 10^9 thì kiểu trả về phải là long long 
 
 
 
