@@ -395,6 +395,134 @@ long long sum(ll n){
   return kq;   // kết quả sẽ bị tràn vì biến kq là int 
 }
 note : kiểu trả về của hàm phải giống với kiểu gán biến 
+---------------------------------------------------------------------
+nếu muốn chữ số tận cùng của nó là 8 dùng vòng while rồi so sánh
+if(sum%10==8) return 1; có thể thay thành return sum%10==8;
+while(n) nó giống với while(n!=0) và while(n>0) 
+---------------------------------------------------------------------
+for(int i = 1; i <= n; i++) giống với while
+int i = 1;
+while (i <= n) {
+    // thân vòng lặp
+    i++;      // phải có i++ để tăng lên 
+}
+Truyền tham trị : Khi bạn thay đổi giá trị biến trong hàm, biến gốc 
+bên ngoài không bị ảnh hưởng.
+void tang(int x) {
+    x = x + 1;
+}
+int main() {
+    int a = 5;
+    tang(a);
+    cout<<a; // In ra 5, vì 'a' không bị thay đổi
+}
+Truyền tham chiếu : Khi bạn thay đổi giá trị biến trong hàm, biến gốc
+bên ngoài cũng bị thay đổi.
+void tang(int &x) {  // Dùng tham chiếu trong C++ 
+    x = x + 1;
+}
+int main() {
+    int a = 5;
+    tang(a);
+    cout<<a; // In ra 6, vì 'a' đã bị thay đổi
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
