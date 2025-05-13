@@ -481,10 +481,10 @@ int ktra6(int n){
   }
   return 0;
 }
-
-
-
-
+__________________________________________________________________________
+THUẬN NGHỊCH: LÀ N == LẬT ví dụ 1234321 -> return n==ktra(n)  
+TÍNH CHÊCH LỆCH TRONG N PHẢI BẰNG 1 : abs(n%10-(n/10)%10)!=1 return 0;
+vd : 2345 thì lấy 5-4=1 nếu !=1 thì return 0;
 
 
 
