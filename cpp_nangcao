@@ -89,6 +89,27 @@ thì ta lấy cái cuối cùng rồi xóa rồi lấy biến sum+=(r-n%10);
 SO SÁNH CÁC SỐ LỚN NHẤT
 thì đặt 1 số cuối rồi so sánh từng số nếu số đó > thì cập nhật
 if(n%10>max) max=n%10; n/=10;
+--------------------------------------------------------------------------
+ĐỐI VỚI CÁC BÀI XÉT CHẲN LẺ THÌ DÙNG CÔNG THỨC : (a+b+4)/5 
+GHÉP SỐ : thì ta dùng hàm min để tìm số nhiều chữ số nếu trùng thì lấy số
+trùng đó trừ đi tìm số -> vd: k32=min(k3,k2-256) vì k256 đã tìm 
+CHIA XU : nên đặt gán cộng tổng lại vì chia xu cho 3 người nên 
+nếu chia hết cho 3 người thì chiaxu/3 >=a , >=b >=c mới chia đều được
+nếu không chia hết thì không chia được vì chiaxu xu ít hơn 1 trong 3 
+SỰ HÀO PHÓNG : 5 người bỏ ra n đồng xu quy rồi tìm trung bình đặt xu 
+quy luật ta nên đặt gán tổng của 5 người rồi tìm điều kiện
+if(tong%5==0) thì ta đặt gán là b=tong/5; đề bài kêu là tìm in ra -1 
+if(b!=0) cout<<b;  còn else cout<<-1; 
+TÌM SỐ PHÚT CÒN LẠI : thì lấy tổng số phút 1 ngày - số phút * giờ - phút 
+ĐỔI THỜI GIAN vd 392 đổi sang giờ , phút , giây 
+vì n là giây nên ta lấy 60*60 nên tính 1 giờ rồi chia phút chia giây 
+THỜI GIAN KẾ TIẾP : tìm sau k phút thì giờ phút nó là mấy 
+trước tiên ta giữ lại k phút còn lại 1 ngày của nó lấy k%784 //28*28=784 
+int time=h*28+m+k  // tổng số phút đã trôi qua
+int gio=time/28,phut=time%28;
+TÌM KÍ TỰ : tồn tại 1 chữ C và 2 dấu + c=='C' , c=='+' 
+đặt 2 biến dem để so sánh 
+if(dem>=1&&dem2>=2) cout<<"Yes" 
 __________________________________________________________________________
 while(n>9){
     int sum=0;    //phải đặt sum bên ngoài while phụ vì nó so sánh 
