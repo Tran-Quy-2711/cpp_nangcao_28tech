@@ -476,6 +476,10 @@ int a=100;
   cout<<a<<" "<<b;  // 100 100 
 khi khai báo biến trước nó là gọi là biến gốc 
 còn gán biến thì sẽ thay đổi giá trị ảnh hưởng biến gốc 
+int i=1;
+for(int i=1;i<=5;i++){
+}
+cout<<i; //chỉ khai báo số 1 thôi 
 ----------------------------------------------------------------------
 CÔNG THỨC LẬT NGƯỢC : 
 int rev = 0;
