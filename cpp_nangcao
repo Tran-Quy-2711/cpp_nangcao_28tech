@@ -110,6 +110,12 @@ int gio=time/28,phut=time%28;
 TÌM KÍ TỰ : tồn tại 1 chữ C và 2 dấu + c=='C' , c=='+' 
 đặt 2 biến dem để so sánh 
 if(dem>=1&&dem2>=2) cout<<"Yes" 
+SẮP XẾP SỐ : thì ta tìm hàm max , min sau đó tìm số chính giữa 
+lấy a+b+c-max_val-min_val là ra số chính giữa 
+TÍNH TỔNG SỐ : khi thấy chữ số thì ta cộng dồn vào thì lấy sum+=c-48; 
+CHỈ SỐ BMI : thì ta nên dùng float để tránh lấy thiếu 
+vd int chieucao=h/100 = 1.51 mà kiểu int thì ta chỉ lấy 1 thôi 
+nên dùng float chieucao=h/100.0  
 __________________________________________________________________________
 while(n>9){
     int sum=0;    //phải đặt sum bên ngoài while phụ vì nó so sánh 
@@ -119,6 +125,13 @@ while(n>9){
     }
     n=sum;  
   }
+CHỮ SỐ ĐẦU TIÊN VÀ CUỐI CÙNG 
+ll n ; cin>>n;
+  int r=n%10;    // lấy chữ số cuối cùng 
+  while(n>=10){
+    n/=10;       // duyệt đến khi còn 1 chữ số 
+  }
+  cout<<n<<" "<<r;
 --------------------------------------------------------------------------
 switch (val) {
   case 1:
@@ -506,14 +519,44 @@ __________________________________________________________________________
 THUẬN NGHỊCH: LÀ N == LẬT ví dụ 1234321 -> return n==ktra(n)  
 TÍNH CHÊCH LỆCH TRONG N PHẢI BẰNG 1 : abs(n%10-(n/10)%10)!=1 return 0;
 vd : 2345 thì lấy 5-4=1 nếu !=1 thì return 0;
-
-
-
-
-
-
-
-
+TÍNH TỔNG CHÊCH LỆCH CỦA N : 1231 thì ta lấy 1-2,2-3,3-1 = 4 
+int sum=0;
+  while(n>=10){
+    int r=n%10;  // lấy số cuối cùng 
+    n/=10;      // xóa đi số cuối cùng 
+    sum+=abs(r-n%10);   // lấy số cuối cùng trừ đi số gần cuối 
+  }
+  cout<<sum;
+__________________________________________________________________________
+TÌM SỐ LỚN NHẤT TRONG N : ta đặt int r=n%10 rồi so sánh 
+đặt gán max_val=0; nên dùng while(n!=0) nó xét đến trường hợp cuối cùng 
+if(r>max_val) max_val=r; cout<<max_val; 
+KIỂM TRA SỐ ĐẦU TIÊN CÓ LỚN HƠN CÁC SỐ CÒN LẠI KHÔNG : tìm số lớn rồi ss 
+dùng n/=10 thì ra số cuối cùng rồi lấy nó so sánh số lớn nhất 
+int max_val=0;
+  while(n>=10){
+    int r=n%10;
+    n/=10;
+    if(r>max_val) max_val=r;
+  }
+if(n>=max_val) cout<<"yes";
+else cout<<"no";
+--------------------------------------------------------------------------
+In ra các số trong dãy số 1, 2, 4, 7, 11, 16, 22.... mà nhỏ hơn hoặc bằng
+N, các số trong dãy này có khoảng cách giữa các số tăng dần lên 1 đơn vị.
+ll n; cin>>n;
+int dem=1,kc=1;
+for(int i=1;dem<=n;i++){
+  cout<<dem<<" "; 
+  dem+=i;                   
+}
+khi i=1 cout<<1 -> 1+=1 =2 
+khi i=2 cout<<2 -> 2+=2 =4  
+khi i=3 cout<<4 -> 4+=3 =7   
+khi i=4 cout<<7 -> 7+=4=11 
+khi i=5 cout<<11 -> 11+=5=16  
+...
+khi i=9 cout<<37 ->39+=9=48   
 
 
 
