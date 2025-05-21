@@ -630,7 +630,7 @@ for(int i=2;i*i<=n;i++){
       }
       cout<<i<<"^"<<mu;
     }
-    cout<<" ";
+    cout<<" * ";
 }
 if(n>1) cout<<n<<"^1";
 --------------------------------------------------------------------------
@@ -679,25 +679,97 @@ ll sphenic(ll n){
   if(n>1) dem++;
   return dem==3;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------------------------------
+Số Smith : N = 666 = 18 nguyên tố là 2, 3, 3, 3, 7 = 18
+-----------------------------------------------------------------------------
+Ước số nguyên tố lớn nhất : khai báo max_val=i; nên nhớ phải có TH : n>1 
+-----------------------------------------------------------------------------
+Bình phương nguyên tố 1 : đặt mu>=2 vì chia hết cho bình phương nguyên tố 
+vì nếu số mũ < 2 thì số đó không chia hết cho bình phương của số nguyên tố đó
+-----------------------------------------------------------------------------
+Bình phương số nguyên tố 2 : chia hết cho một số nguyên tố nào đó thì cũng 
+phải chia hết cho bình phương của số nguyên tố đó 
+=> nên đặt mu<2 return 0; // chia hết cho i nhưng không chia cho i^2 
+-----------------------------------------------------------------------------
+Thừa số nguyên tố số mũ lớn nhất : in mũ lớn nhất và số nguyên tố 
+Ví dụ N = 60 = 2^2* 3^1 * 5^2 thì đáp án sẽ là 2 2 
+nếu số mũ bằng nhau thì lấy nguyên tố nhỏ hơn 
+int somu=0,max_val=0;
+for(int i=2;i*i<=n;i++){
+  if(n%i==0){
+    int mu=0;
+    while(n%i==0){
+      mu++;
+      n/=i;
+    }
+    if(mu>somu){
+      somu=mu;
+      max_val=i;
+    }
+  }
+}
+if(n>1){
+  if(1>somu){
+    somu=1;
+    max_val=n;
+  }
+}
+cout<<max_val<<" "<<somu;
+--------------------------------------------------------------------------
+2 3 5
+(2, 3) (3, 1) (5, 1)
+2 x 2 x 2 x 3 x 5
+void thuant(int n){
+  int max_val=0;
+  for(int i=2;i<=n;i++){
+    if(n%i==0){
+      cout<<i<<" "; 
+      while(n%i==0) {
+        n/=i;
+      }
+    }
+  }
+  if(n>1) cout<<n;
+}
+void thuant2(int n){
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      int mu=0;
+      while(n%i==0){
+        mu++;
+        n/=i;
+      }
+      cout<<"("<<i<<","<<mu<<")"<<" ";
+    }
+  }
+  if(n>1) cout<<"("<<n<<",1)";
+}
+void thuant3(int n){
+  for(int i=2;i*i<=n;i++){
+    while(n%i==0){
+      cout<<i;
+      n/=i;
+      if(n!=1) cout<<" x ";
+    }
+  }
+  if(n>1) cout<<n;
+}
+--------------------------------------------------------------------------
+GCD NẰM TRONG THƯ VIỆN ALGORITHM 
+LCM : a/__gcd(a,b)*b; 
+--------------------------------------------------------------------------
+tam giác Pascal : C(i,j) = i!/(j!*(i-j)!) 
+--------------------------------------------------------------------------
+Tìm K chữ số cuối cùng của N^M, kết quả có thế không đủ K chữ số.
+-> công thức : n^m / 10^k vì thường lấy chữ số cuối là n%10 
+int n,m,k; cin>>n>>m>>k;
+  int mod=pow(10,k);
+  int sum=1;
+  for(int i=1;i<=m;i++){ 
+    sum*=n; // i=1 -> 1*=9=9 , i=2 -> 9*9=81 ,i=3 -> 1*9=9...
+    sum%=mod;// i=1 -> 9%10=9 ,i=2 ->81%10=1 , i=2 ->9%10=9 
+  }           // chạy đến i<=8 -> 8 lần chạy 
+  cout<<sum;
 
 
 
