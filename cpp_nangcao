@@ -570,6 +570,7 @@ int q=n-p; để lấy cặp nguyên tố đó
 Cặp số nguyên tố cùng nhau : dùng ước chung lớn nhất __gcd(i,j)==1
 --------------------------------------------------------------------------
 Tất cả các số có đúng ba ước số : thì nó chính là bình phương 
+3 ước số chỉ khi nó là bình phương của một số nguyên tố.
 ví dụ n^2 nó sẽ là 1 , n , n^2  thì có 3 ước nên cout<<i*i;
 ví dụ n nó sẽ là 1 , n có 2 ước 
 tại sao i*i<=n vì nó là bình phương khi bình lên số rất to khi cout<<i*i;
