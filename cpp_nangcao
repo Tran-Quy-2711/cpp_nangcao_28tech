@@ -945,14 +945,66 @@ if(n>1) {
   if(res==k) return n;
 }
 return -1;
-
-
-
-
-
-
-
-
+-------------------------------------------------------------------------------
+Liệt kê chữ số nguyên tố : chữ số nguyên tố của 1 số theo thứ tự từ nhỏ đến lớn
+int tmp=n;
+while(tmp){
+  d[tmp%10]++;
+  tmp/=10;
+}
+for(int i=1;i<10;i++){
+  if(d[i]!=0&&(i==2||i==3||i==5||i==7)) cout<<i<<" "<<d[i]<<endl;
+}
+cout<<endl;
+tmp=n;
+int rev=0;
+while(tmp){
+  rev=rev*10+tmp%10;
+  tmp/=10;
+}
+while(rev){
+  int i=rev%10;
+  if(d[i]!=0&&(i==2||i==3||i==5||i==7)){
+    cout<<i<<" "<<d[i]<<endl;
+    d[i]=0;
+  }
+  rev/=10;
+}
+----------------------------------------------------------------------------------
+Số nguyên dương nhỏ nhất chia hết cho x, y, z.
+ll bcnn(ll a,ll b){
+  return a/__gcd(a,b)*b;
+}
+ll dem(ll n){
+  int sum=0;
+  while(n){
+    sum++;
+    n/=10;
+  }
+  return sum;
+}
+int main(){
+  ll x,y,z,n; cin>>x>>y>>z>>n;
+  ll t=bcnn(x,bcnn(y,z)); // tìm bcnn nhỏ nhất đếm chữ số = n và chia hết x,y,z
+  ll res=t;
+  while(dem(res)<n) res+=t; // vì bcnn nên ta dùng + 
+  if(dem(res)==n) cout<<res;
+  else cout<<-1;
+}
+vd : 30 -> dem=2<4 không đúng nên 30+30=60 -> dem=2<4 -> 120-> dem=3<4 .... 
+----------------------------------------------------------------------------------
+UCLL,BCNN nên sử dụng long long thư viện algorithm 
+ll gcd(ll a,ll b){
+  while(b){
+    int tmp=b;
+    b=a%b;
+    a=tmp;
+  }
+  return a;
+}
+ll lcm(ll a,ll b){
+  return a/gcd(a,b)*b;
+}
 
 
 
