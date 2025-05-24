@@ -1005,8 +1005,175 @@ ll gcd(ll a,ll b){
 ll lcm(ll a,ll b){
   return a/gcd(a,b)*b;
 }
+----------------------------------------------------------------------------------
+Số gần thuận nghịch
+ll tn(int n){
+  int m=n;
+  int rev=0;
+  while(n){
+    rev=rev*10+n%10;
+    n/=10;
+  }
+  return rev==m;
+}
+int check(int n){
+  int r=n%10;
+  n/=10;         // xóa vì ta kiểm tra từ số 2 gần cuối trở về đầu 
+  int sum=0;
+  while(n>=10){
+    sum=sum*10+n%10;
+    n/=10;
+  }             //cs đầu gấp 2 cs cuối nên để dấu && ngược lại nên để dấu = 
+  return ((r==n*2||n==r*2)&&tn(sum)); 
+}
+NOTE : THỪA SỐ NGUYÊN TỐ KHÔNG LÀM THEO KIỂU KIỂM TRA NGUYÊN TỐ 
+----------------------------------------------------------------------------------
+                                MẢNG 1 CHIỀU 
+int a[5];  // thì nó sẽ có 5 giá trị gán ngẫu nhiên 
+int a[5]={1,2,3,4,5};  // đủ 5 giá trị
+int a[10]={1,2,3,4,5}; //chỉ có 5 giá trị đầu còn từ 6->10 đều số 0 
+muốn in tất cả 100 số 0 : int a[100]={0}; 
+khác với int a[100]={1}; // nó chỉ in 1 giá trị còn 99 còn lại là 0  
+----------------------------------------------------------------------------------
+khi muốn in tất cả các phần từ : 
+  int a[5]={1,2,3,4,5};
+  for(int i=0;i<5;i++) cout<<a[i]<<" ";  //12345 
+từ a[5] -> a[0] : ta nên hạ xuống 1 đơn vị và chạy đến i>=0 
+  for(int i=4;i>=0;i--) cout<<a[i]<<" ";
+cách 2 : ta có thể dùng for each để in tất cả các phần tử 
+for(int x:a) cout<<x<<" ";      //lấy tử a trong mảng để gán cho x 
+//a nó chỉ xác định trong mảng có phần tử ví dụ a[10] thì nó đã nhận 10 phần tử 
+----------------------------------------------------------------------------------
+Tham chiếu dùng dấu & còn tham trị không dùng dấu & 
+  + tham chiếu khi có & nó sẽ thay đổi giá trị biến gốc 
+  + tham trị không thay đổi giá trị biến gốc 
+for(int &x:a){
+    x=28;
+}
+for(int x:a) cout<<x<<" ";  //28 28 28 28 28 
+//vì biến x đã được đặt địa chỉ 
+for(int x:a){
+    x=28;
+  }
+for(int x:a) cout<<x<<" ";
+// nó vẫn sẽ in ra 1 2 3 4 5 
+---------------------------------------------------------------------------------
+nhập kiểu dữ liệu thì ta dùng cin>>n; còn mảng ta nên dùng for và cin>>a[i];
+LƯU Ý : ta nên khai báo int n; cin>>n; trước khi dùng mảng int a[n];
+    + nhập n xong mới được khai báo n phần tử mảng 
+        int n; cin>>n;
+        int a[n];
+    + xem đề bài dữ liệu nó cho bao nhiêu rồi đặt : phải >= dữ liệu đề bài 
+// khai báo trên 1 triệu phần tử trở lên ta nên khai báo ra hàm main 
+//int a[5]; trong main thì nó sẽ là giá trị rác còn ngoài main là số 0 
+---------------------------------------------------------------------------------
+TÌM MAX MIN TRONG MẢNG 
+CÁCH 1 :
+    int n; cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    int max_val=a[0],min_val=a[0]; // nên nhớ phải khai báo cin>>a[i] trước 
+    for(int i=0;i<n;i++){
+      if(a[i]<min_val) min_val=a[i];
+      else max_val=a[i];
+    }
+    cout<<min_val<<" "<<max_val;
+CÁCH 2 :
+    int n; cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    int max_val=a[0],min_val=a[0];
+    for(int i=1;i<n;i++){    // vì max_val , min_val đã ở phần tử a[0] rồi 
+      if(a[i]<min_val) min_val=a[i]; // nên chỉ kiểm tra từ phần tử 2 trở đi 
+      else max_val=a[i];
+    }
+    cout<<min_val<<" "<<max_val;
+---------------------------------------------------------------------------------
+đếm xem trong mảng của bạn có bao nhiêu số có cùng giá trị nhỏ nhất.
+tìm min nhỏ nhất rồi chạy vòng for if(a[i]==min) dem++;
+int n; cin>>n;
+int a[n];
+int dem=0;
+for(int i=0;i<n;i++) cin>>a[i];
+int max_val=a[0],min_val=a[0];
+for(int i=1;i<n;i++){
+  if(a[i]<min_val) min_val=a[i];
+}
+for(int i=0;i<n;i++){
+  if(a[i]==min_val) dem++;
+}
+cout<<dem;
+---------------------------------------------------------------------------------
+Kiểm tra đối xứng : ta nên chia ra 2 cái 
+nó khác với hàm vì nó cách nhau bằng 1 dấu cách hàm thì dùng sum=sum*10+n%10; 
+còn mảng thì ta tách 2 cái ra rồi tính 
+CÁCH 1 : 
+    bool dx(int a[],int n){
+      for(int i=0;i<=n/2;i++){
+        if(a[i]!=a[n-i-1]) return 0;
+      }
+      return 1;
+    }
+    int main(){
+      int n; cin>>n;
+      int a[n];
+      for(int i=0;i<n;i++) cin>>a[i];
+      cout<<dx(a,n);  
+    }
+CÁCH 2 : 
+    bool dx2(int a[],int n){
+      int l=0,r=n-1;
+      while(l<=r){
+      if(a[l]!=a[r]) return 0; // không có thì tăng l và giảm r 
+      ++l; --r;
+      }
+      return 1;
+    }
 
-
+---------------------------------------------------------------------------------
+Lật ngược phần tử trong mảng vd 1 2 3 4 5 -> 5 4 3 2 1 dùng swap(a[i],a[n-i-1]) 
+void lat(int a[],int n){
+  for(int i=0;i<n/2;i++){
+    swap(a[i],a[n-i-1]);
+  }
+}
+int main(){
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  lat(a,n);
+  for(int x:a) cout<<x<<" ";
+}
+---------------------------------------------------------------------------------
+In phần tử : xét a[i]%2==0 và i%2==0 để tìm vị trí và số chia hết cho 2 
+Cặp số 1   : 2 vòng for vòng for j bắt đầu từ i+1 và i<j rồi cộng lại i+j==k 
+Cặp số 2   : tìm độ chênh lệch nhỏ nhất giữa 2 phần tử trong mảng -> dùng min 
+        int n; cin>>n;
+          int a[n];
+          for(int i=0;i<n;i++) cin>>a[i];
+          int min_val=a[0];
+          int k; cin>>k;
+          for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+              int t=a[i]-a[j];
+              min_val=min(min_val,abs(t));
+            } 
+          }
+          cout<<min_val;
+---------------------------------------------------------------------------------
+Liệt kê các giá trị khác nhau : ta ở số chính giữa 
+nếu liệt kê các số ở đầu từ trái sang phải : 0 -> i-1 
+nếu liệt kê các số ở sau giữa từ trái sang phải : i+1 -> n-1 
+    int n; cin>>n;
+      int a[n];
+      for(int i=0;i<n;i++) cin>>a[i];
+      for(int i=0;i<n;i++){
+        int check=0; // nên đặt trong for vì nếu đang true sẽ không in cuối 
+        for(int j=0;j<i;j++){
+          if(a[i]==a[j]) check=1;
+        }
+        if(!check) cout<<a[i]<<" ";
+      }
 
 
 
