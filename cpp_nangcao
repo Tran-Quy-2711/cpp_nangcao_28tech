@@ -1224,6 +1224,268 @@ khi i=0 : l=0 , r=3+5+4+6+1=19 // kiểm tra 1 tk sai nó sẽ bỏ qua
 khi i=1 : l=2 , r=5+4+6+1=17 // kiểm tra nếu 1 tk sai thì bỏ qua 
 khi i=2 : l=5 , r=4+6+1=11 // kiểm tra thấy 5 và 11 là số nguyên tố in ra 2 
 .... kiểm tra đến khi kết thúc nếu còn thì nó sẽ in ra vị trí đứng trong mảng 
+--------------------------------------------------------------------------------
+FIBONACCI 
+      int n; cin>>n;
+      ll fibo[100];
+      fibo[0]=0;
+      fibo[1]=1;
+      for(int i=2;i<=92;i++){
+        fibo[i]=fibo[i-1]+fibo[i-2];
+      }
+      for(int i=0;i<=92;i++){
+        cout<<fibo[i]<<endl;
+      }
+FIBONACCI 1 : bắt đầu từ 1 
+      int n; cin>>n;
+      ll fibo[100];
+      fibo[0]=0;
+      fibo[1]=1;
+      for(int i=2;i<=92;i++){
+        fibo[i]=fibo[i-1]+fibo[i-2];
+      }
+      for(int i=1;i<=6;i++){
+        cout<<fibo[i]<<endl;
+      }
+FIBONACCI 2 : Kiểm tra xem có phải fibonacci 
+      int n; cin>>n;
+      ll fibo[100];
+      int check=0;
+      fibo[0]=0;
+      fibo[1]=1;
+      for(int i=2;i<=92;i++){
+        fibo[i]=fibo[i-1]+fibo[i-2];
+      }
+      for(int i=1;i<=92;i++){
+        if(n==fibo[i]) check=1;
+      }
+      if(check) cout<<1;
+      else cout<<0;
+Liệt kê và đếm số fibonaccі.
+      bool check(ll n){
+        ll f[100];
+        f[0]=0,f[1]=1;
+        if(n==0||n==1) return 1;
+        for(int i=2;i<=92;i++){
+          f[i]=f[i-1]+f[i-2];
+          if(n==f[i]) return 1;
+        }
+        return 0; 
+      }
+      int main(){
+        int n; cin>>n;
+        ll a[n];
+        for(int i=0;i<n;i++) cin>>a[i];
+        int ok=0;
+        for(int i=0;i<n;i++){
+          if(check(a[i])) {
+            ok=1;
+            cout<<a[i]<<" ";
+          }
+        }
+        if(!ok) cout<<"NONE";
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
