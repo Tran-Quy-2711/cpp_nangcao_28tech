@@ -1174,9 +1174,56 @@ nếu liệt kê các số ở sau giữa từ trái sang phải : i+1 -> n-1
         }
         if(!check) cout<<a[i]<<" ";
       }
-
-
-
+--------------------------------------------------------------------------------
+Tần suất
+    int n; cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    for(int i=0;i<n;i++){
+      bool check=0;
+      for(int j=0;j<i;j++){
+        if(a[i]==a[j]) check=1;
+      }
+      if(!check){
+        int dem=1;
+        for(int j=i+1;j<n;j++){
+          if(a[i]==a[j]) dem++;
+        }
+        cout<<a[i]<<" "<<dem<<endl;
+      }
+    }  //4 2 6 3 0 7 7
+khi i=0 -> không chạy vì j<i check=0  xuống vòng lặp chạy từ j=i+1;j<n 
+kiểm tra từ 2 đến 7 không có a[i]=4 nên chỉ in dem=1 
+khi i=1 -> check=0 vì 4 khác 2 xuống vòng lặp 
+kiểm tra từ 6 đến 7 không có a[i]=2 nên chỉ in dem=1 
+khi i=2 -> check=0 vì 4 khác 6 và 2 khác 6 nên xuống vòng lặp 
+kiểm tra từ 3 đến 7 không có a[i]=6 nên chỉ in dem=1 
+khi i=3 -> check=0 vì 4,2,6 khác 3 xuống vòng lặp 
+kiểm tra từ 0 đến 7 không có a[i]=3 nên chỉ in dem=1 
+khi i=4 -> check=0 vì 4,2,6,3 khác 0 xuống vòng lặp 
+kiểm tra từ 7 đến 7 không có a[i]=0 nên chỉ in dem=1
+khi i=5 -> check=0 vì 4,2,6,3,0 khác 7 xuống vòng lặp 
+kiểm tra thấy 7==7 vì j=i+1 lên a[i]=6 là 7 vì gán là 7 nên bằng tăng dem++ 
+khi i=6 -> check=1 vì 7=7  nên không xuống vòng lặp thực hiện 
+--------------------------------------------------------------------------------
+Cân bằng nguyên tố
+    int n; cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    for(int i=0;i<n;i++){
+      int l=0,r=0;
+      for(int j=0;j<i;j++){
+        l+=a[j]; 
+      }
+      for(int j=i+1;j<n;j++){
+        r+=a[j];
+      }
+      if(ktra(r)&&ktra(l)) cout<<i;
+    }        // a = [2, 3, 5, 4, 6, 1]
+khi i=0 : l=0 , r=3+5+4+6+1=19 // kiểm tra 1 tk sai nó sẽ bỏ qua 
+khi i=1 : l=2 , r=5+4+6+1=17 // kiểm tra nếu 1 tk sai thì bỏ qua 
+khi i=2 : l=5 , r=4+6+1=11 // kiểm tra thấy 5 và 11 là số nguyên tố in ra 2 
+.... kiểm tra đến khi kết thúc nếu còn thì nó sẽ in ra vị trí đứng trong mảng 
 
 
 
