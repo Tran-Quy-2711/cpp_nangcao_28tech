@@ -1285,52 +1285,142 @@ Liệt kê và đếm số fibonaccі.
         }
         if(!ok) cout<<"NONE";
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------
+Vị trí số lớn nhất, nhỏ nhất
+NOTE : < nó chỉ lấy số đầu >= nó lấy số cuối chỉ nhớ là có dấu = là vị trí cuối 
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int min_val=1e9+7,max_val=0,vt_min,vt_max;
+  for(int i=0;i<n;i++){
+    if(a[i]<=min_val){
+      min_val=a[i];
+      vt_min=i;
+    }
+    if(a[i]>max_val){
+      max_val=a[i];
+      vt_max=i;
+    }
+  }
+  cout<<vt_min<<" "<<vt_max;
+--------------------------------------------------------------------------------
+Tìm gcd của mọi phần tử trong mảng
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int r=a[0];
+  for(int i=1;i<n;i++){
+    r=__gcd(r,a[i]);
+  }
+  cout<<r;
+--------------------------------------------------------------------------------
+Số lớn thứ nhất và lớn thứ 2 : trùng nhau là 5 là lớn nhất và lớn nhì 
+giống nhau là 2 vị trí khác nhau nhưng giống số : a[1]=5 , a[3]=5 
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int max1=0,max2=0,vt_max;
+  for(int i=0;i<n;i++){
+    if(a[i]>=max1){
+      max2=max1;
+      max1=a[i];
+    }
+    else max2=max(max2,a[i]); 
+  }
+  cout<<max1<<" "<<max2;
+--------------------------------------------------------------------------------
+Số lượng số thuận nghịch trong dãy
+nên nhớ nếu gán biến tmp thành n thì return để so sánh 
+  int rev=0,tmp=n;
+  while(n){
+    rev=rev*10+n%10;
+    n/=10;
+  }
+  return rev==tmp;
+--------------------------------------------------------------------------------
+Liệt kê : nguyên tố , thuận nghịch , chính phương , tổng nguyên tố 
+int ktra(int n){
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0) return 0;
+  }
+  return n>1;
+}
+int tn(int n){
+  int rev=0,tmp=n;
+  while(n){
+    rev=rev*10+n%10;
+    n/=10;
+  }
+  return rev==tmp;
+}
+int cp(int n){
+  int can=sqrt(n);
+  return 1ll*can*can==n;
+}
+int tongnt(int n){
+  int sum=0;
+  while(n){
+    sum+=n%10;
+    n/=10;
+  }
+  return ktra(sum);
+}
+int main(){
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int dem1=0,dem2=0,dem3=0,dem4=0;
+  for(int i=0;i<n;i++){
+    if(ktra(a[i])) dem1++;
+    if(tn(a[i])) dem2++;
+    if(cp(a[i])) dem3++;
+    if(tongnt(a[i])) dem4++;
+  }
+  cout<<dem1<<endl<<dem2<<endl<<dem3<<endl<<dem4;
+}
+--------------------------------------------------------------------------------
+Mảng đối xứng
+int dx(int a[],int n){
+  for(int i=0;i<n/2;i++){
+    if(a[i]!=a[n-i-1]) return 0;
+  }
+  return 1;
+}
+int main(){
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int dem1=0,dem2=0,dem3=0,dem4=0;
+  if(dx(a,n)) cout<<"yes";
+  else cout<<"no";
+}
+--------------------------------------------------------------------------------
+Liền kề trái dấu 
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int ok=0;
+  for(int i=0;i<n;i++){
+    if(i>0&&a[i]*a[i-1]<0) ok=1;
+    if(i<n-1&&a[i]*a[i+1]<0) ok=1;
+    if(ok) cout<<a[i]<<" ";
+  }
+--------------------------------------------------------------------------------
+Lật ngược mảng : dùng for từ lớn chạy đến nhỏ 
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=n-1;i>=0;i--){
+    cout<<a[i]<<" ";
+  }
+--------------------------------------------------------------------------------
+Lớn hơn liền kề
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i]; 
+  for(int i=1;i<n-1;i++){   // vì không kiểm tra 2 phần tử cuối 
+    if(a[i]>a[i-1]&&a[i]>a[i+1]) cout<<a[i]<<" ";
+  }
 
 
 
