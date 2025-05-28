@@ -1434,13 +1434,66 @@ Chỉ dùng để kiểm tra từng phần tử riêng	  ✅ Nên dùng	      �
 Dùng để đếm tổng, tính toán nhiều lần	    ❌ Không nên	    ✅ Cần dùng
 Dùng sau vòng lặp for	                    ❌ Không nên	    ✅ Bắt buộc
 
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------
+Mảng đánh dãu 1 : nó không dành cho số âm 
+  int d[1000001];   // có 1 triệu phần tử nó đều là số 0 
+  int main(){
+  int n; cin>>n;
+  ll a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++){
+    d[a[i]]=1;     // các mảng đã nhập nó thấy sẽ bằng 1 là truy cập chỉ số 
+  }
+  int dem=0;
+  for(int i=0;i<1000000;i++){
+    if(d[i]==1) dem++; 
+  }
+  cout<<dem;
+--------------------------------------------------------------------------------
+Mảng đánh dấu 2 : duyệt từ 0 đến n thì dùng d[i] 
+  int n; cin>>n;
+  ll a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++){
+    d[a[i]]++;
+  }
+  int dem=0;
+  for(int i=0;i<1000001;i++){
+    if(d[i]!=0) cout<<i<<" "<<d[i]<<endl;
+  }
+--------------------------------------------------------------------------------
+Mảng đánh dấu 3 : duyệt mảng gốc vd 9 4 2 thì dùng d[a[i]] 
+int d[1000001];
+int main(){
+  int n; cin>>n;
+  ll a[n];
+  for(int i=0;i<n;i++){
+    cin>>a[i];
+    d[a[i]]++;
+  }
+  for(int i=0;i<n;i++){
+    if(d[a[i]]!=0) {
+      cout<<a[i]<<" "<<d[a[i]]<<endl; // đối với bài duyệt mảng gốc ta nên dùng 
+      d[a[i]]=0;  //để tránh số đã in trước 
+    }
+  }
+}
+--------------------------------------------------------------------------------
+Mảng đánh dấu 4
+  int n; cin>>n;
+  ll a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++){
+    d[a[i]]++;   // nó sẽ đếm tần suất trước 
+  }
+  int max_val=0,res=0;
+  for(int i=0;i<1000000;i++){ // khi i=0 nó sẽ tìm 0 phần tử giá trị 
+    if(d[i]>max_val){  // nó đã thấy 0 thì 1>0 vì đã đếm tần suất rồi 
+      max_val=d[i]; //max_val=1 , res=0 vì i=0 
+      res=i;
+    }
+  }
+  cout<<res<<" "<<max_val;
 
 
 
