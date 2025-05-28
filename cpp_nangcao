@@ -1429,7 +1429,10 @@ Lớn hơn liền kề
   for(int i=1;i<n-1;i++){   // vì không kiểm tra 2 phần tử cuối 
     if(a[i]>a[i-1]&&a[i]>a[i+1]) cout<<a[i]<<" "; //lấy 1 số so sánh 2 bên cạnh 
   }
-
+        Mục đích dùng biến	              Khai báo trong    for	Khai báo ngoài for
+Chỉ dùng để kiểm tra từng phần tử riêng	  ✅ Nên dùng	      ❌ Không cần thiết
+Dùng để đếm tổng, tính toán nhiều lần	    ❌ Không nên	    ✅ Cần dùng
+Dùng sau vòng lặp for	                    ❌ Không nên	    ✅ Bắt buộc
 
 
 
