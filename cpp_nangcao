@@ -1435,6 +1435,105 @@ Dùng để đếm tổng, tính toán nhiều lần	    ❌ Không nên	    ✅
 Dùng sau vòng lặp for	                    ❌ Không nên	    ✅ Bắt buộc
 
 --------------------------------------------------------------------------------
+Đếm phân phối sử dụng mảng
+const int maxn=1001;
+int d[maxn],f[maxn];
+int main(){
+  int n; cin>>n;
+  int a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  int max_val=a[0];
+  for(int i=0;i<n;i++){
+    d[a[i]]++;
+    f[a[i]]++;
+    max_val=max(max_val,a[i]);
+  }
+  for(int i=0;i<n;i++){
+    if(d[a[i]]!=0) {
+      cout<<a[i]<<" "<<d[a[i]]<<endl;
+      d[a[i]]=0;
+    }
+  }
+  cout<<endl;
+  for(int i=0;i<=max_val;i++){
+    if(f[i]!=0) cout<<i<<" "<<f[i]<<endl;
+  }
+  cout<<endl;
+  int _max=0,_min=1e9+7;
+  for(int i=0;i<=max_val;i++) {
+    if(f[i]>0) {
+        _max=max(_max, f[i]);
+        _min=min(_min, f[i]);
+    }
+}
+  for(int i=max_val;i>=0;i--){
+    if(f[i]==_max){
+     cout<<i<<endl;
+     break;
+    }
+  }
+  for(int i=0;i<=max_val;i++){
+    if(f[i]==_min){
+     cout<<i<<endl;
+     break;
+    }
+  }
+}
+--------------------------------------------------------------------------------
+Xóa
+  int n; cin>>n;
+  int x; cin>>x;
+  int a[n];
+  int vt;
+  int ok=0;
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++){
+    if(a[i]==x) {
+      ok=1;
+      vt=i;
+      break;
+    }
+  }
+  if(!ok) cout<<"NOT FOUND";
+  else {
+    for(int i=vt;i<n-1;i++){
+      a[i]=a[i+1];
+    }
+    for(int i=0;i<n-1;i++) cout<<a[i]<<" ";
+  }
+--------------------------------------------------------------------------------
+Mảng cộng dồn
+  int n; cin>>n;
+  int a[n];
+  ll f[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<n;i++){
+    if(i==0){
+      f[i]=a[0];
+    }
+    else {
+      f[i]=f[i-1]+a[i];
+    }
+  }
+  for(int i=0;i<n;i++) cout<<f[i]<<" ";
+--------------------------------------------------------------------------------
+Cửa sổ cỡ K
+
+--------------------------------------------------------------------------------
+Mảng chẫn lẻ
+  int n; cin>>n;
+  int x; 
+  int chan=0,le=0;
+  while(n--){
+    cin>>x;
+    if(x%2==0) chan++;
+    else le++;
+  }
+  if(chan>le) cout<<"chan";
+  else if(chan<le) cout<<"le";
+  else cout<<"chan le";
+--------------------------------------------------------------------------------
+
 Mảng đánh dãu 1 : nó không dành cho số âm 
   int d[1000001];   // có 1 triệu phần tử nó đều là số 0 
   int main(){
@@ -1512,9 +1611,47 @@ Mảng đánh dấu 5
     }
   }
   cout<<vt<<" "<<ts;
-
-
-
+--------------------------------------------------------------------------------
+VECTOR ITERATOR :
+        begin() Iterator đến phần tử đầu tiên
+        end() Iterator đến phần tử sau phần tử cuối
+        rbegin() Iterator đến phần tử cuối trong vector
+        rend() Iterator đến phần tử trước phần tử đầu tiên
+- Push Pop : Thêm 1 phần tử vào cuối vector, vector sẽ tự động mở rộng kích thước.
+- pop_back : Xóa phần tử cuối cùng trong vector
+- size : Trả về số lượng phần tử trong vector
+- clear : Xóa toàn bộ các phần tử trong vector
+- empty : Trả về true nếu vector rỗng, ngược lại trả về false
+- insert : Thêm 1 phần tử vào vị trí bất kì trong vector thông qua iterator.
+    • Cú pháp: insert(Vị trí iterator, val)
+- erase : Xóa 1 phần tử trong vector thông qua iterator.
+    • Cú pháp: erase (Vị trí iterator)
+- assign : Gán các phần tử trong vector với cùng một giá trị
+    • Cú pháp: assign (số phần tử, val)
+- resize : Thay đổi kích thước của vector
+    • Cú pháp: resize(n)
+--------------------------------------------------------------------------------
+auto : chỉ thay cho pair và iterator 
+--------------------------------------------------------------------------------
+Bài 1. Push Pop
+  int n; cin>>n;
+  vector<int> v;
+  for(int i=0;i<n;i++){
+    int tmp,x; cin>>tmp;
+    if(tmp==1){
+      cin>>x;
+      v.push_back(x);
+    }
+    else {
+      if(!v.empty()){
+        v.pop_back();
+      }
+    }
+  }
+  if(v.empty()) cout<<"empty";
+  else {
+    for(int x:v) cout<<x<<" ";
+  }
 
 
 
