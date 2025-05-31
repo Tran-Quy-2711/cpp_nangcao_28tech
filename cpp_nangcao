@@ -1494,8 +1494,24 @@ Mảng đánh dấu 4
     }
   }
   cout<<res<<" "<<max_val;
-
-
+--------------------------------------------------------------------------------
+Mảng đánh dấu 5 
+  int n; cin>>n;
+  ll a[n];
+  for(int i=0;i<n;i++) cin>>a[i];
+  ll max_val=a[0];
+  for(int i=0;i<n;i++){
+    d[a[i]]++;
+    max_val=max(max_val,a[i]);
+  }
+  int ts=0,vt=0;
+  for(int i=0;i<=max_val;i++){
+    if(d[i]>ts){
+      ts=d[i];
+      vt=a[i];
+    }
+  }
+  cout<<vt<<" "<<ts;
 
 
 
