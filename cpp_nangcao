@@ -1621,7 +1621,7 @@ VECTOR ITERATOR :
         end() Iterator đến phần tử sau phần tử cuối
         rbegin() Iterator đến phần tử cuối trong vector
         rend() Iterator đến phần tử trước phần tử đầu tiên
-- Push Pop : Thêm 1 phần tử vào cuối vector, vector sẽ tự động mở rộng kích thước.
+- Push_back: Thêm 1 phần tử vào cuối vector, vector sẽ tự động mở rộng kích thước.
 - pop_back : Xóa phần tử cuối cùng trong vector
 - size : Trả về số lượng phần tử trong vector
 - clear : Xóa toàn bộ các phần tử trong vector
@@ -1636,6 +1636,16 @@ VECTOR ITERATOR :
     • Cú pháp: resize(n)
 --------------------------------------------------------------------------------
 auto : chỉ thay cho pair và iterator 
+  for(vector<int>::iterator) : có thể thay thành
+  for(auto it=v.begin();it!=v.begin();it++) cout<<*it<<" ";
+  _________________________________________________________
+  for (int i = 0; i < v.size(); i++) {
+      cout << v[i] << " ";
+  }
+  có thể thay thành 
+  for (auto &x : v) {
+      cout << x << " ";
+  }
 --------------------------------------------------------------------------------
 Bài 1. Push Pop
   int n; cin>>n;
@@ -1656,25 +1666,90 @@ Bài 1. Push Pop
   else {
     for(int x:v) cout<<x<<" ";
   }
+tương ứng với : for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
 ------------------------------------------------------------------------------------
 NOTE : khi so sánh 2 số thì phải đặt 2 số có cùng kiểu dữ liệu không thì nó không in 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+------------------------------------------------------------------------------------
+Erase Insert
+  int m; cin>>m;
+  vector<int> v(m);
+  for(int i=0;i<m;i++) cin>>v[i];
+  int n; cin>>n;
+  while(n--){
+    int tmp; cin>>tmp;
+    if(tmp==1){
+      int x,y; cin>>x>>y;
+      if(x>=0&&x<=v.size()){
+        v.insert(v.begin()+x,y);
+      }
+    }
+    else{
+      int x; cin>>x;
+      if(x>=0&&x<v.size()){
+        v.erase(v.begin()+x);
+      }
+    }
+  }
+  if(v.empty()) cout<<"EMPTY";
+  else {
+    for(int x:v) cout<<x<<" ";
+  }
+------------------------------------------------------------------------------------
+Sắp xếp
+sort(v.begin(), v.end()); // sắp xếp tăng dần mặc định là a<b 
+sort(v.begin(), v.end(), greater<int>()); // sắp xếp giảm dần 
+        int n; cin>>n;
+        vector<int> v(n);
+        for(int i=0;i<n;i++) cin>>v[i];
+        sort(v.begin(),v.end()); 
+        for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
+        cout<<endl;
+        sort(v.begin(),v.end(),greater<int>());
+        for(int x:v) cout<<x<<" ";
+------------------------------------------------------------------------------------
+Duyệt : reverse(v.begin(), v.end()); // hàm lật ngược vector 
+  int n; cin>>n;
+  vector<int> v(n);
+  for(int i=0;i<n;i++) cin>>v[i];
+  int l,r; cin>>l>>r;
+  for(auto it=v.begin()+l;it!=v.begin()+r+1;it++){
+    cout<<*it<<" ";
+  }
+  cout<<endl;
+  reverse(v.begin()+l,v.begin()+r+1);  //nếu nó bằng thì nó sẽ không in 
+  for(auto it=v.begin()+l;it!=v.begin()+r+1;it++){
+    cout<<*it<<" ";
+  }
+------------------------------------------------------------------------------------
+Lật ngược vector
+  int n; cin>>n;
+  vector<int> v(n);
+  for(int i=0;i<n;i++) cin>>v[i];
+  reverse(v.begin(),v.end());
+  for(int x:v) cout<<x<<" ";
+  cout<<endl;
+  int l,r; cin>>l>>r;
+  reverse(v.begin()+l,v.begin()+r+1);
+  for(int x:v) cout<<x<<" ";
+------------------------------------------------------------------------------------
+max_element, min_element, accumulate
+  hàm max_element để tìm phần tử lớn nhất, min_element để tìm phần tử nhỏ
+  nhất, accumulate để tính tổng 
+tổng phải có thư viện <numeric>  cung cấp các hàm xử lý số học trên dãy 
+  int n; cin>>n;
+  vector<int> v(n);
+  for(int i=0;i<n;i++) cin>>v[i];
+  cout<<*min_element(v.begin(),v.end())<<endl;
+  cout<<*max_element(v.begin(),v.end())<<endl;
+  cout<<accumulate(v.begin(),v.end(),0);
+------------------------------------------------------------------------------------
+Vector và pair
+------------------------------------------------------------------------------------
+Vector và pair 2
+------------------------------------------------------------------------------------
+Đếm tần suất 1
+------------------------------------------------------------------------------------
+Đếm tần suất 2
 
 
 
