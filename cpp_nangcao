@@ -1596,21 +1596,25 @@ Mảng đánh dấu 4
 --------------------------------------------------------------------------------
 Mảng đánh dấu 5 
   int n; cin>>n;
-  ll a[n];
-  for(int i=0;i<n;i++) cin>>a[i];
-  ll max_val=a[0];
+  int a[n];
+  for(int i=0;i<n;i++){
+    cin>>a[i];
+  }
+  int max_val=a[0];
   for(int i=0;i<n;i++){
     d[a[i]]++;
     max_val=max(max_val,a[i]);
   }
-  int ts=0,vt=0;
+  int ts=0;
   for(int i=0;i<=max_val;i++){
-    if(d[i]>ts){
-      ts=d[i];
-      vt=a[i];
+    if(d[i]>ts) ts=d[i];
+  }
+  for(int i=0;i<=max_val;i++){
+    if(d[a[i]]==ts) {
+      cout<<a[i]<<" "<<ts;
+      break;
     }
   }
-  cout<<vt<<" "<<ts;
 --------------------------------------------------------------------------------
 VECTOR ITERATOR :
         begin() Iterator đến phần tử đầu tiên
@@ -1652,8 +1656,8 @@ Bài 1. Push Pop
   else {
     for(int x:v) cout<<x<<" ";
   }
-
-
+------------------------------------------------------------------------------------
+NOTE : khi so sánh 2 số thì phải đặt 2 số có cùng kiểu dữ liệu không thì nó không in 
 
 
 
