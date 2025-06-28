@@ -1,0 +1,124 @@
+#1 
+  int x; cin>>x;
+  cout<<1ll*x*x*x+3ll*x*x+x+1;
+#2 
+  int a,b,c; cin>>a>>b>>c;
+  cout<<1ll*a*(b+c)+1ll*b*(a+c);
+#3 
+  int c; cin>>c;
+  cout<<fixed<<setprecision(2)<<(c*9.0/5)+32;
+#4 
+  int r; cin>>r;
+  double const pi=3.14;
+  cout<<fixed<<setprecision(4)<<2*pi*r<<" "<<pi*r*r;
+#5 
+  int x1,y1,x2,y2; cin>>x1>>y1>>x2>>y2;
+  cout<<fixed<<setprecision(2)<<sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+#6 
+  int n; cin>>n;
+  if(n%2==0) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n%3==0&&n%5==0) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n%3==0&&n%7!=0) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n%3==0||n%7==0) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n>30&&n<50) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n>=30&&(n%2==0||n%3==0||n%5==0)) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n>=10&&n<=99&&(n%10==2||n%10==3||n%10==5||n%10==7)) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n<=100&&n%23==0) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n<=10||n>=20) cout<<"yes\n";
+  else cout<<"no\n";
+  if(n%10%3==0) cout<<"yes\n";
+  else cout<<"no\n";
+#7 
+  int a,b; cin>>a>>b;
+  cout<<a/b*b<<endl;
+  cout<<a/b*b+b<<endl;    //cout<<(a+b-1)/b*b;
+#8 
+  int a,b; cin>>a>>b;
+  cout<<a+b<<endl;
+  cout<<a-b<<endl;
+  cout<<1ll*a*b<<endl;
+  if(b!=0){
+    cout<<fixed<<setprecision(4)<<a*1.0/b;
+  }
+  else cout<<"INVALID";
+#9 
+  int n; cin>>n;
+  if(n%400==0||(n%4==0&&n%100!=0)) cout<<"yes";
+  else cout<<"no";
+#10 
+  int a,b,c; cin>>a>>b>>c;
+  if(a>0&&b>0&&c>0&&a+b>c&&b+c>a&&c+a>b) cout<<"yes";
+  else cout<<"no";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
