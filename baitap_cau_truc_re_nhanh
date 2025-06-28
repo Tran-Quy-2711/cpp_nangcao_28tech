@@ -1,3 +1,7 @@
+Làm tròn lên bội gần nhất của m : ((x + m - 1) / m) * m;
+Làm tròn xuống bội gần nhất của m : (x / m) * m;
+Làm tròn đến bội gần nhất (gần cả lên lẫn xuống) : ((x + m / 2) / m) * m;
+
 #1 
   int x; cin>>x;
   cout<<1ll*x*x*x+3ll*x*x+x+1;
@@ -126,8 +130,115 @@
   if(m%a==0) ngang=m/a;
   else ngang=m/a+1;
   cout<<ngang*doc;
+#21 
+  int a,b,k; cin>>a>>b>>k;
+  int trai,phai;
+  if(k%2==0){
+    cout<<abs(a-b)*k/2;
+  }
+  else{
+    cout<<abs((a-b)*(k/2))+a;
+  }
+#22 
+  ll n,s; cin>>n>>s;
+  if(s%n==0) cout<<s/n;
+  else cout<<s/n+1;
+#23 
+  int n,m; cin>>n>>m;
+  int Min=0,Max=n;
+  if(n%2==0) Min=n/2;
+  else Min=n/2+1;
+  int toithieu=(Min+m-1)/m*m;
+  if(toithieu<=Max) cout<<toithieu;
+  else cout<<-1;
+#24
+  int d1,d2,d3; cin>>d1>>d2>>d3;
+  int c1=d1+d2+d3;
+  int c2=2*(d1+d2);
+  int c3=2*(d2+d3);
+  int c4=2*(d3+d1);
+  cout<<min({c1,c2,c3,c4});
+#25
+  int n; cin>>n;
+  int to100=n/100;
+  int to20=n%100/20;
+  int to10=n%100%20/10;
+  int to5=n%100%20%10/5;
+  int to1=n%100%20%10%5;
+  cout<<to100+to20+to10+to5+to1;
+#26
+  int a,b,c,d; cin>>a>>b>>c>>d;
+  cout<<max({a,b,c,d})<<" ";
+  cout<<min({a,b,c,d});
+#27
+  float a; cin>>a;
+  cout<<round(a);
+#28
+  int n,u1,d; cin>>n>>u1>>d;
+  cout<<n/2*(2*u1+(n-1)*d);
+#29
+  int a,b,c,d; cin>>a>>b>>c>>d;
+  if(b%a==0){
+    int cb=b/a;
+    if(b*cb==c&&c*cb==d) cout<<"yes";
+    else cout<<"no";
+  }
+  else cout<<"no";
+#30 
+  int n; cin>>n;
+  cout<<n*(n-1)/2;
+#31 
+  int a1,a2,a3,b1,b2,b3; cin>>a1>>a2>>a3>>b1>>b2>>b3;
+  int n; cin>>n;
+  int cup,hc;
+  cup=(a1+a2+a3+4)/5;
+  hc=(b1+b2+b3+9)/10;
+  if(cup+hc<=n) cout<<"yes";
+  else cout<<"no";
+#32 
+  int k2,k3,k5,k6; cin>>k2>>k3>>k5>>k6;
+  int k256=min({k2,k5,k6});
+  int k32=min(k3,k2-k256);
+  cout<<k256*256+k32*32;
+#33 
+  int a,b,c,n; cin>>a>>b>>c>>n;
+  int tien=a+b+c+n;
+  if(tien%3==0){
+    int tb=tien/3;
+    if(tb>=a&&tb>=b&&tb>=c) cout<<"yes";
+    else cout<<"no";
+  }
+  else cout<<"no";
+#34
+  int c1,c2,c3,c4,c5; cin>>c1>>c2>>c3>>c4>>c5;
+  int nam=c1+c2+c3+c4+c5;
+  if(nam%5==0){
+    int b=nam/5; 
+    if(b!=0){
+      cout<<b;
+    }
+    else cout<<-1;
+  }
+  else cout<<-1;
+#35
+  int h,m; cin>>h>>m;
+  cout<<60*24-(60*h+m);
+#36
+  ll n; cin>>n;
+  ll gio=n/3600;
+  ll phut=n%3600/60;
+  ll giay=n%3600%60;
+  cout<<gio<<"h : "<<phut<<"m : "<<giay<<"s";
+#37
 
-
+#38
+#39
+#40
+#41
+#42
+#43
+#44
+#45 
 
 
 
