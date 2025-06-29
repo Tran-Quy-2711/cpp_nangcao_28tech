@@ -1,1 +1,377 @@
+for (khởi_tạo; điều_kiện_lặp; cập_nhật) {
+    // khối lệnh thực hiện trong mỗi vòng lặp
+}
+NOTE : 
+  - Gặp ước thì tối ưu : i*i<=n 
+  - số chính phương không phải là ước không dùng n%i==0 -> cout<<i*i; vẫn tối ưu 
+[Vòng lặp Cơ Bản]
+#1 
+  int n; cin>>n;
+  for(int i=1;i<=n;i++) cout<<"Hello 28tech"<<endl;
+  for(int i=1;i<=n;i++) cout<<i<<" ";
+  cout<<endl;
+  for(int i=0;i<n;i++) cout<<i<<" ";
+  cout<<endl;
+  for(int i=n;i>=1;i--) cout<<i<<" ";
+  cout<<endl;
+  for(int i=n-1;i>=0;i--) cout<<i<<" ";
+#2 
+  int n; cin>>n;
+  for(int i=0;i<=n;i+=3) cout<<i<<" ";
+  cout<<endl;
+  for(int i=1;i<=n;i*=2){
+    cout<<i<<" "; // in ra cout trước rồi dùng giá trị cập nhật 
+  }
+  cout<<endl;
+  for(int i=n;;i++){
+    if(i%17==0) {
+      cout<<i;
+      break;
+    }
+  }
+  cout<<endl;
+  for(int i=n;;i--){
+    if(i%7==0){
+      cout<<i;
+      break;
+    }
+  }
+  cout<<endl;
+  int dem=1,step=1;
+  for(int i=1;dem<=n;i++){
+    cout<<dem<<" ";
+    dem+=step;
+    step++;
+  }
+#3 
+DÙNG FOR 
+  int n; cin>>n;
+  for(int i=1;i<=n;i++) cout<<i<<" ";
+  cout<<endl;
+  for(int i=n;i>=0;i--) cout<<i<<" ";
+  cout<<endl;
+  for(int i=0;i<=n;i+=2) cout<<i<<" ";
+  cout<<endl;
+  for(int i=1;i<=n;i+=2) cout<<i<<" ";
+  cout<<endl;
+  for(int i=0;i<=n;i+=4) cout<<i<<" ";
+  cout<<endl;
+  for(int i=97;i<=96+n;i++) cout<<char(i)<<" ";
+  cout<<endl;
+  for(char i='v';i<='v'-1+n;i++) cout<<char(i)<<" ";
+DÙNG WHILE 
+  int n; cin>>n;
+  int i=1;
+  while(i<=n){
+    cout<<i<<" ";
+    i++;
+  }
+  cout<<endl;
+  int i2=n;
+  while(i2>=0){
+    cout<<i2<<" ";
+    i2--;
+  }
+  cout<<endl;
+  int i3=0;
+  while(i3<=n){
+    cout<<i3<<" ";
+    i3+=2;
+  }
+  cout<<endl;
+  int i4=1;
+  while(i4<=n){
+    cout<<i4<<" ";
+    i4+=2;
+  }
+  cout<<endl;
+  int i5=0;
+  while(i5<=n){
+    cout<<i5<<" ";
+    i5+=4;
+  }
+  cout<<endl;
+  int i6=97;
+  while(i6<=96+n){
+    cout<<char(i6)<<" ";
+    i6++;
+  }
+  cout<<endl;
+  char i7='v';
+  while(i7<='v'-1+n){
+    cout<<char(i7)<<" ";
+    i7++;
+  }
+#4 
+  int n; cin>>n;
+  int i=3;
+  while(i<=n){
+    cout<<i<<" ";
+    i+=3;
+  }
+  cout<<endl;
+  int i2=0;
+  while(i2<=n){
+    cout<<i2<<" ";
+    i2+=15;
+  }
+  cout<<endl;
+  int i3=n+1;
+  while(i3>=n){
+    if(i3%7==0){
+      cout<<i3;
+      break;
+    }
+    i3++;
+  }
+  cout<<endl;
+  int i4=n-1;
+  while(i4<=n){
+    if(i4%9==0){
+      cout<<i4;
+      break;
+    }
+    i4--;
+  }
+  cout<<endl;
+  int i5=1;
+  while(i5<=2*n){
+    cout<<i5<<" ";
+    i5+=2;
+  }
+[Vòng lặp] 
+#1 
+  int n; cin>>n;
+  int tong=0;
+  for(int i=1;i<=n;i++) tong+=i;
+  cout<<tong;
+#2 
+  int n; cin>>n;
+  int tong=0;
+  for(int i=1;i<=n;i++) tong+=i*i;
+  cout<<tong;
+#3 
+  int n; cin>>n;
+  int tong=0;
+  for(int i=0;i<=n;i+=3) tong+=i;
+  cout<<tong;
+#4
+  int n; cin>>n;
+  double tong=0;
+  for(int i=1;i<=n;i++) tong+=1.0/i;
+  cout<<fixed<<setprecision(3)<<tong;
+#5
+  int n; cin>>n;
+  double tong=0;
+  for(int i=1;i<=n;i++) tong+=1.0/(2*i);
+  cout<<fixed<<setprecision(5)<<tong;
+#6
+  int n; cin>>n;
+  int tong=0;
+  for(int i=1;i*i<=n;i++){
+    if(n%i==0){
+      tong+=i;
+      if(i!=n/i) tong+=n/i; // tránh cộng trùng căn bậc hai
+    }
+  }
+  cout<<tong;
+#7
+  int n; cin>>n;
+  int dem=0;
+  for(int i=1;i*i<=n;i++){
+    if(n%i==0){
+      dem++;
+      if(i!=n/i) dem++;
+    }
+  }
+  cout<<dem<<endl;
+  for(int i=1;i<=n;i++){  // liệt kê tăng dần thì không tối ưu 
+    if(n%i==0){
+      cout<<i<<" ";
+    }
+  }
+#8
+  int n; cin>>n;
+  for(int i=1;i*i<=n;i++){
+    cout<<i*i<<" ";
+  }
+#9
+  int n; cin>>n;
+  int tich=1;
+  for(int i=1;i*i<=n;i++){
+    if(n%i==0){
+      tich*=i;
+      if(i!=n/i) tich*=n/i;
+    }
+  }
+  cout<<tich;
+#10
+  int n; cin>>n;
+  int x; 
+  int ok=0;
+  for(int i=1;i<=n;i++){
+    cin>>x;
+    if(x==2022) ok=1;
+  }
+  if(ok) cout<<"yes";
+  else cout<<"no";
+#11
+  int n; cin>>n;
+  int sum=0;
+  for(int i=1;i<=n;i++) sum+=pow(-1,i)*i;
+  cout<<sum;
+#12
+  int n; cin>>n;
+  int sum=0;
+  for(int i=1;i<=n;i++) sum+=2*i; 
+  cout<<sum;
+#13
+  int n; cin>>n;
+  int sum=0;
+  for(int i=1;i<=n;i++) sum+=2*i-1; 
+  cout<<sum;
+#14
+  int n; cin>>n;
+  int sum=0;
+  for(int i=1;i<=n;i++) sum+=pow(i,3); 
+  cout<<sum;
+#15
+  int n; cin>>n;
+  int gt=1;
+  for(int i=1;i<=n;i++) gt*=i;
+  cout<<gt;
+#16
+  int n; cin>>n;
+  int dem=0;
+  while(n){
+    dem++;
+    n/=10;
+  }
+  cout<<dem;
+#17
+  int n; cin>>n;
+  int dem=0;
+  while(n){
+    dem+=n%10;
+    n/=10;
+  }
+  cout<<dem;
+#18
+  ll n; cin>>n;
+  int dem=0;
+  while(n){
+    int r=n%10;
+    if(r==2||r==3||r==5||r==7) dem++;
+    n/=10;
+  }
+  cout<<dem;
+#19
+  int n; cin>>n;
+  int vochai,bia;
+  bia=n/28;
+  vochai=bia;
+  while(vochai>=3){
+    int bia_moi=vochai/3;
+    bia+=bia_moi;
+    vochai=bia_moi+vochai%3;
+  }
+  cout<<bia;
+#20 
+  int n; cin>>n;
+  if(n<2) {
+    cout<<-1;
+    return 0;
+  }
+  else if(n%2==0){
+    cout<<n/2<<endl;
+    for(int i=1;i<=n/2;i++){
+      cout<<2<<" ";
+    }
+  }
+  else {
+    cout<<n/2<<endl;
+    for(int i=1;i<=n/2-1;i++) cout<<2<<" ";
+    cout<<3;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
