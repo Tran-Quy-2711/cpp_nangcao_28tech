@@ -293,7 +293,204 @@ DÙNG WHILE
     for(int i=1;i<=n/2-1;i++) cout<<2<<" ";
     cout<<3;
   }
+#21 
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++) cout<<"*";
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(i==1||j==1||j==n||i==n) cout<<"*";
+      else cout<<" ";
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(i==1||j==1||j==n||i==n) cout<<"*";
+      else cout<<"#";
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(i==1||i==n||j==1||j==n) cout<<i<<" ";
+      else cout<<"  ";
+    }
+    cout<<endl;
+  }
+#22
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=i;j++) cout<<"*";
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=n;i>=1;i--){
+    for(int j=1;j<=i;j++) cout<<"*";
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(n-i>=j) cout<<" ";
+      else cout<<"*";
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=n;i>=1;i--){
+    for(int j=1;j<=n;j++){
+      if(n-i>=j) cout<<" ";
+      else cout<<"*";
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(j==1||i==n||j==i) cout<<"*";
+      else cout<<" ";
+    }
+    cout<<endl;
+  }
+#23
+  int n; cin>>n;
+  int dem=1;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      cout<<dem<<" ";
+      dem++;
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    int dem=i;
+    for(int j=1;j<=n;j++){
+      cout<<dem<<" ";
+      dem++;
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(n-i>=j) cout<<"~";
+      else cout<<i;
+    }
+    cout<<endl;
+  }
+  cout<<endl;
+  for(int i=1;i<=n;i++){
+    int step=n-1,buoc=i;
+    for(int j=1;j<=i;j++){
+      cout<<buoc<<" ";
+      buoc+=step;
+      step--;
+    }
+    cout<<endl;
+  }
+#24
+  int a,b; cin>>a>>b;
+  int min_val=min(a,b); // tìm số nhỏ rồi dùng for tính gt 
+  int gt=1;
+  for(int i=1;i<=min_val;i++) gt*=i;
+  cout<<gt;
+#25
+  int n; cin>>n;
+  double tong=1;
+  int gt=1;
+  for(int i=1;i<n;i++){
+    gt*=i;
+    tong+=1.0/gt;
+  }
+  cout<<fixed<<setprecision(4)<<tong;
+#26
+  int a,b,n; cin>>a>>b>>n;
+  int ok=0;
+  for(int x=0;x<=n/a;x++){
+    int y=(n-a*x);
+    if(y%b==0&&y>=0) ok=1;
+  }
+  if(ok) cout<<"yes";
+  else cout<<"no";
+#27
+  int n; cin>>n;
+  while(n>9){
+    int sum=0;
+    while(n){
+      sum+=n%10;
+      n/=10;
+    }
+    n=sum;
+  }
+  cout<<n;
+#28
+  int n; cin>>n;
+  int tong=0;
+  int gt=1;
+  for(int i=1;i<=n;i++) {
+    gt*=i;
+    tong+=gt;
+  }
+  cout<<tong;
+#29
+  int n; cin>>n;
+  int tong=0;
+  for(int i=1;i<=n;i++) {
+    int x; cin>>x;
+    if(x%2==0) tong+=x;
+  }
+  cout<<tong;
+#30 
+  int n; cin>>n;
+  for(int i=1;i<=n;i++) {
+    int x; cin>>x;
+    if(x%2==0) cout<<"EVEN"<<endl;
+    else cout<<"ODD"<<endl;
+  }
+#31
+  int n; cin>>n;
+  int gt=1;
+  double tong=1;
+  for(int i=1;i<=n;i++) {
+    gt*=i;
+    tong+=1.0/gt;
+  }
+  cout<<fixed<<setprecision(2)<<tong;
+#32
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    char c=64+i;
+    for(int j=1;j<=i;j++){
+      cout<<char(c)<<" ";
+    }
+    cout<<endl;
+  }
+#33
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    for(int j=1;j<=2*i-1;j++) cout<<"* ";
+    cout<<endl;
+  }
+#34
 
+#35
+
+#36
+#37
+
+#38
+
+#39
+
+#40 
 
 
 
