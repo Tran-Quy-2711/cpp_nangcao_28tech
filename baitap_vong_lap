@@ -480,18 +480,82 @@ DÙNG WHILE
     cout<<endl;
   }
 #34
-
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    int tmp=i;
+    for(int j=1;j<=i;j++){
+      cout<<tmp<<" ";
+      tmp++; //4 
+    }
+    tmp-=2; //4-2=2 -> i=2 
+    for(int j=1;j<=i-1;j++){
+      cout<<tmp<<" ";
+      tmp--;
+    }
+    cout<<endl;
+  }
 #35
-
+  int n; cin>>n;
+  for(int i=n;i>=1;i--){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    for(int j=1;j<=2*i-1;j++) cout<<"* ";
+    cout<<endl;
+  }
 #36
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    for(int j=1;j<=2*i-1;j++) cout<<"* ";
+    cout<<endl;
+  }
+  for(int i=n-1;i>=1;i--){
+    for(int j=1;j<=n-i;j++) cout<<"  ";
+    for(int j=1;j<=2*i-1;j++) cout<<"* ";
+    cout<<endl;
+  }
 #37
-
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if(j==i||j==n-i+1) cout<<i<<" ";// lấy cột cuối 
+      else cout<<"  ";
+    }
+    cout<<endl;
+  }
 #38
-
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=n;j++){
+      if((i+j)%2==0) cout<<0;
+      else cout<<1;
+    }
+    cout<<endl;
+  }
 #39
-
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    char c=64+i;
+    for(int j=1;j<=n;j++){
+      if(i%2==1){
+        cout<<char(c);
+        c++;
+      }
+      else{
+        cout<<char(c+32);
+        c++;
+      }
+    }
+    cout<<endl;
+  }
 #40 
-
+  int n; cin>>n;
+  for(int i=1;i<=n;i++){
+    for(int j=1;j<=10;j++){
+      cout<<i<<" x "<<j<<" = "<<i*j<<endl;
+    }
+    cout<<endl;
+  }
 
 
 
