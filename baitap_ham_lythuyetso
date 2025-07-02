@@ -1,11 +1,11 @@
 #1 [Hàm, Lý Thuyết Số]. Luyện tập viết hàm 1 (Quan trọng)
-  int ktra(int n){
-    for(int i=2;i*i<=n;i++){
-      if(n%i==0) return 0;
-    }
-    return n>1;
+  int ham1(int n){
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0) return 0;
   }
-  int tong(int n){
+  return n>1;
+  }
+  int ham2(int n){
     int sum=0;
     while(n){
       sum+=n%10;
@@ -13,7 +13,7 @@
     }
     return sum;
   }
-  int tongchan(int n){
+  int ham3(int n){
     int sum=0;
     while(n){
       if(n%10%2==0) sum+=n%10;
@@ -21,15 +21,15 @@
     }
     return sum;
   }
-  int tongnt(int n){
+  int ham4(int n){
     int sum=0;
     while(n){
-      if(ktra(n%10)) sum+=n%10;
+      if(ham1(n%10)) sum+=n%10;
       n/=10;
     }
     return sum;
   }
-  int lat(int n){
+  int ham5(int n){
     int rev=0;
     while(n){
       rev=rev*10+n%10;
@@ -37,7 +37,7 @@
     }
     return rev;
   }
-  int thuant(int n){
+  int ham6(int n){
     int dem=0;
     for(int i=2;i*i<=n;i++){
       if(n%i==0){
@@ -48,7 +48,7 @@
     if(n>1) dem++;
     return dem;
   }
-  int uoclon(int n){
+  int ham7(int n){
     int dem=0;
     for(int i=2;i*i<=n;i++){
       if(n%i==0){
@@ -59,17 +59,86 @@
     if(n>1) dem=n;
     return dem;
   }
+  int ham8(int n){
+    int sum=0;
+    while(n){
+      if(n%10==6) return 1;
+      n/=10;
+    }
+    return 0;
+  }
+  int ham9(int n){
+    int sum=0;
+    while(n){
+      sum+=n%10;
+      n/=10;
+    }
+    return sum%8==0;
+  }
+  int gt(int n){
+    int sum=1;
+    for(int i=2;i<=n;i++) sum*=i;
+    return sum;
+  }
+  int ham10(int n){
+    int sum=0;
+    while(n){
+      sum+=gt(n%10);
+      n/=10;
+    }
+    return sum;
+  }
+  int ham11(int n){
+    int r=n%10;
+    n/=10;
+    while(n){
+      if(n%10!=r) return 0;
+      n/=10;
+    }
+    return 1;
+  }
+  int ham12(int n){
+    int r=n%10;
+    n/=10;
+    while(n){
+      if(n%10>r) return 0;
+      n/=10;
+    }
+    return 1;
+  }
+  int dem(int n){
+    int count=0;
+    while(n){
+      count++;
+      n/=10;
+    }
+    return count;
+  }
+  int ham13(int n){
+    int mu=dem(n);
+    int sum=0;
+    while(n){
+      sum+=pow(n%10,mu);
+      n/=10;
+    }
+    return sum;
+  }
   int main(){
     int n; cin>>n;
-    cout<<ktra(n)<<endl;
-    cout<<tong(n)<<endl;
-    cout<<tongchan(n)<<endl;
-    cout<<tongnt(n)<<endl;
-    cout<<lat(n)<<endl;
-    cout<<thuant(n)<<endl;
-    cout<<uoclon(n)<<endl;
+    cout<<ham1(n)<<endl;
+    cout<<ham2(n)<<endl;
+    cout<<ham3(n)<<endl;
+    cout<<ham4(n)<<endl;
+    cout<<ham5(n)<<endl;
+    cout<<ham6(n)<<endl;
+    cout<<ham7(n)<<endl;
+    cout<<ham8(n)<<endl;
+    cout<<ham9(n)<<endl;
+    cout<<ham10(n)<<endl;
+    cout<<ham11(n)<<endl;
+    cout<<ham12(n)<<endl;
+    cout<<ham13(n);
   }
-
 
 
 
