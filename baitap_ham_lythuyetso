@@ -1,5 +1,74 @@
 #1 [Hàm, Lý Thuyết Số]. Luyện tập viết hàm 1 (Quan trọng)
-
+  int ktra(int n){
+    for(int i=2;i*i<=n;i++){
+      if(n%i==0) return 0;
+    }
+    return n>1;
+  }
+  int tong(int n){
+    int sum=0;
+    while(n){
+      sum+=n%10;
+      n/=10;
+    }
+    return sum;
+  }
+  int tongchan(int n){
+    int sum=0;
+    while(n){
+      if(n%10%2==0) sum+=n%10;
+      n/=10;
+    }
+    return sum;
+  }
+  int tongnt(int n){
+    int sum=0;
+    while(n){
+      if(ktra(n%10)) sum+=n%10;
+      n/=10;
+    }
+    return sum;
+  }
+  int lat(int n){
+    int rev=0;
+    while(n){
+      rev=rev*10+n%10;
+      n/=10;
+    }
+    return rev;
+  }
+  int thuant(int n){
+    int dem=0;
+    for(int i=2;i*i<=n;i++){
+      if(n%i==0){
+        dem++;
+        while(n%i==0) n/=i;
+      }
+    }
+    if(n>1) dem++;
+    return dem;
+  }
+  int uoclon(int n){
+    int dem=0;
+    for(int i=2;i*i<=n;i++){
+      if(n%i==0){
+        dem=i;
+        while(n%i==0) n/=i;
+      }
+    }
+    if(n>1) dem=n;
+    return dem;
+  }
+  int main(){
+    int n; cin>>n;
+    cout<<ktra(n)<<endl;
+    cout<<tong(n)<<endl;
+    cout<<tongchan(n)<<endl;
+    cout<<tongnt(n)<<endl;
+    cout<<lat(n)<<endl;
+    cout<<thuant(n)<<endl;
+    cout<<uoclon(n)<<endl;
+  }
 
 
 
