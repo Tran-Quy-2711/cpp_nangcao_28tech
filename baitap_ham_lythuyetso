@@ -140,7 +140,134 @@
     cout<<ham13(n);
   }
 #2 [Hàm, Lý Thuyết Số]. Luyện tập viết hàm 2 (Quan trọng)
-
+int ham1(int n){
+  int dem=0;
+  while(n){
+    int r=n%10;
+    if(r%2==0) dem++;
+    n/=10;
+  }
+  return dem%2==1;
+}
+int ham2(int n){
+  int demc=0,deml=0;
+  while(n){
+    int r=n%10;
+    if(r%2==0) demc++;
+    else deml++;
+    n/=10;
+  }
+  return demc>deml;
+}
+int ham3(int n){
+  if(n<10) return 1;
+  int r=n%10;
+  n/=10;
+  while(n>=10){ // kiểm tra đầu dùng n>=10  
+    n/=10;
+  }
+  return r==n;
+}
+int ham4(int n){
+  int sum=0;
+  while(n){
+    sum+=n%10;
+    n/=10;
+  }
+  return sum%10==8;
+}
+int ktra(int n){
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0) return 0;
+  }
+  return n>1;
+}
+int ham5(int n){
+  int sum=0;
+  while(n){
+    sum+=n%10;
+    n/=10;
+  }
+  return ktra(sum);
+}
+int ham6(int n){
+  if(n<10) return 1;
+  int r=n%10;
+  n/=10;
+  while(n){
+    int r2=n%10;
+    if(abs(r-r2)!=1) return 0;
+    r=r2;
+    n/=10;
+  }
+  return 1;
+}
+int ham7(int n){
+  if(n<10) return 1;
+  int r=n%10;
+  n/=10;
+  while(n>=10){
+    if(n%10>r) r=n%10;
+    n/=10;
+  }
+  return n>r;
+}
+int fibo(int n){
+  if(n==0||n==1) return 1;
+  ll f0=0,f1=1,fn;
+  for(int i=2;i<=93;i++){
+    fn=f0+f1;
+    if(fn>n) return 0;
+    f0=f1;
+    f1=fn;
+  }
+  return 1;
+}
+int ham8(int n){
+  int sum=0;
+  while(n){
+    sum+=n%10;
+    n/=10;
+  }
+  return fibo(sum);
+}
+int tn(int n){
+  int rev=0;
+  while(n){
+    rev=rev*10+n%10;
+    n/=10;
+  }
+  return rev;
+}
+int ham9(int n){
+  int sum=0;
+  while(n){
+    sum+=n%10;
+    n/=10;
+  }
+  return tn(sum)==sum;
+}
+int ham10(int n){
+  while(n){
+    int r=n%10;
+    if(r!=0&&r!=6&&r!=8) return 0;
+    n/=10;
+  }
+  return 1;
+}
+int main(){
+  int n; cin>>n;
+  cout<<ham1(n)<<endl;
+  cout<<ham2(n)<<endl;
+  cout<<ham3(n)<<endl;
+  cout<<ham4(n)<<endl;
+  cout<<ham5(n)<<endl;
+  cout<<ham6(n)<<endl;
+  cout<<ham7(n)<<endl;
+  cout<<ham8(n)<<endl;
+  cout<<ham9(n)<<endl;
+  cout<<ham10(n)<<endl;
+}
 
 
 
